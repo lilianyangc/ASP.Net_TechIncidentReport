@@ -1,0 +1,81 @@
+﻿body {
+    background-color: #F0A15B;
+    background-image: url("BG2.png");
+    background-size: contain;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.td {
+    text-align: center;
+    
+    bottom: 0;
+    width: 99%;
+    height: 110px; 
+    padding-top: 25px;
+    background-color: #F0A15B;
+}
+
+.myH1 {
+    margin-top: 43px;
+    margin-left: 5px;
+}
+
+.myHr {
+    background-color: black;
+}
+
+.btn-outline-dark {
+    margin-top: 43px;
+}
+
+    .btn-outline-dark:hover {
+        background-color: black;
+        color: #F0A15B;
+    }
+
+.container {
+    width: 700px;
+    height: auto;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.outer {
+    display: table;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+    /*whatever width you want*/
+    background-color: #F0A15B;
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.textbox:focus {
+    outline-color: black;
+}
+
+.textbox {
+    border: none;
+    margin-bottom: 5px;
+}
+.textbox2 {
+    border: thick 5px black;
+    box-shadow: inset 0 0 1px 1px black;
+    margin-bottom: 5px;
+}
