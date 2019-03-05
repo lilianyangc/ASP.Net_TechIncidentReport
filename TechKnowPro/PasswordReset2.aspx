@@ -5,9 +5,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
 </head>
 <body>
-    Please answer the security question below:<br /><br />
+    <div class="homebg">
+        <strong>Please answer the security question below:</strong><br /><br />
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label>
@@ -20,6 +25,7 @@
         <asp:Button ID="btnBack" runat="server" Text="Back to Login" CausesValidation="False" OnClick="btnBack_Click" />
     </form>
     <br />
+    </div>
 </body>
 <asp:sqldatasource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT customers.customer_id, customers.user_id, customers.email, customers.question_id, questions.description, customers.question_answer FROM customers INNER JOIN questions ON customers.question_id = questions.question_id"></asp:sqldatasource>
 </html>
