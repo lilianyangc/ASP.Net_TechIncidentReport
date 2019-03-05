@@ -16,6 +16,10 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            if (!IsPostBack)
+            {
+                ddlQuestions.DataBind();
+            }
         }
 
         protected void btnRegis_Click(object sender, EventArgs e)
@@ -23,11 +27,11 @@ namespace TechKnowPro
              d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
             if (d1.Count==0 && cbAgree.Checked) //check if there is no duplicate values
             {
-               sdsUser.Insert(); //insert into user value of textbox user and password
-               store(); //after user inserted the user_id and rol_ID =3 will be used to store it in user_role table
-               sdsRole.Insert(); //insert into user_role
+                sdsUser.Insert(); //insert into user value of textbox user and password
+                store(); //after user inserted the user_id and rol_ID =3 will be used to store it in user_role table
+                sdsRole.Insert(); //insert into user_role
                 //after question is available take the id to send to customer table
-                sdsCustomers.Insert(); // insert with value question id =9
+                sdsCustomers.Insert(); // insert into customers table
                 
                 lblSuccOrErr.Text = "Registration successful! An email has been sent please check your email";
                 Session.Abandon();
@@ -62,10 +66,8 @@ namespace TechKnowPro
             Session["firstN"] = txtFN.Text;
             Session["lastN"] = txtLN.Text;
             Session["address"] = txtAddr.Text;
-            Session["questId"] = 9; // id9 = null
+            Session["questionAnswer"] = txtQuestionAnswer.Text;
             //null value for other because first registered user won't have that
-            
-           
           
         }
 

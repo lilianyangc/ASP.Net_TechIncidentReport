@@ -36,6 +36,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="auto-style3"></td>
+                            <td class="auto-style4">
+                                <asp:HyperLink ID="hypPasswordReset" runat="server" NavigateUrl="~/PasswordReset1.aspx">Forgot password?</asp:HyperLink>
+                            </td>
+                        </tr>
+                        <tr>
                             <td class="auto-style2">&nbsp;</td>
                             <td>
                                 <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" class="btn btn-outline-dark" />
