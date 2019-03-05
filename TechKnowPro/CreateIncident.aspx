@@ -40,7 +40,7 @@
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" CausesValidation="False" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" />
                     </td>
                 </tr>
             </table>

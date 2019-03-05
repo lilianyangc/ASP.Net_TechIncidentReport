@@ -31,6 +31,19 @@
     margin-top: 43px;
 }
 
+.btn-outline-warning {
+    margin-top: 43px;
+    color: #F0A15B;
+    border-color: #F0A15B;
+}
+
+.btn-outline-dark:hover {
+    background-color: black;
+    /*color*/
+    color: #F0A15B;
+}
+
+
     .btn-outline-dark:hover {
         background-color: black;
         color: #F0A15B;
