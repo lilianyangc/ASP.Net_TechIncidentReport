@@ -111,7 +111,7 @@
                     &nbsp;</td>
                 <td class="auto-style2">
                    &nbsp;<asp:CheckBox ID="cbAgree" runat="server" BorderStyle="None" />&nbsp;<asp:Label ID="Label8" runat="server" Text="I agree to the"></asp:Label>&nbsp;
-                    <asp:HyperLink href="#" ID="HyperLink1" runat="server" BorderColor="#A9AEB1" >terms of service</asp:HyperLink>
+                    <asp:HyperLink href="TermsServices.aspx" ID="HyperLink1" runat="server" BorderColor="#A9AEB1" >terms of service</asp:HyperLink>
                 </td>
             </tr>
             <tr>
