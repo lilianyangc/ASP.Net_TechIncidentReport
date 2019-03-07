@@ -48,7 +48,11 @@
             </table>
     <br />
             <hr class="myHr">
-        <table class="auto-style1 homebg">
+
+        <div class="homebg">
+
+     
+        <table class="auto-style1">
             <tr>
                 <td class="auto-style3">
                    
@@ -191,6 +195,9 @@
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="sdsCustomerInformation" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [customer_id], [user_id], CONCAT([firstname],' ',[lastname]) AS fullname, [firstname], [lastname], [address], [email], [phone], [position_title], [question_id], [question_answer] FROM [customers] ORDER BY [customer_id]">
         </asp:SqlDataSource>
+    <br />
+    <br />
+       </div>
 </body>
      <br />
     <div class="td">
