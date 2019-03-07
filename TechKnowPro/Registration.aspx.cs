@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using TechKnowPro.Model;
-
+using System.Net.Mail;
 namespace TechKnowPro
 {
     public partial class Registration : System.Web.UI.Page
@@ -28,12 +28,11 @@ namespace TechKnowPro
             if (d1.Count==0 && cbAgree.Checked) //check if there is no duplicate values
             {
                 sdsUser.Insert(); //insert into user value of textbox user and password
-                store(); //after user inserted the user_id and rol_ID =3 will be used to store it in user_role table
+                store(); //after user inserted the user_id and rol_ID =1 will be used to store it in user_role table
                 sdsRole.Insert(); //insert into user_role
                 //after question is available take the id to send to customer table
                 sdsCustomers.Insert(); // insert into customers table
-                
-                lblSuccOrErr.Text = "Registration successful! An email has been sent please check your email";
+                mail();
                 Session.Abandon();
                 Response.Redirect("~/Login.aspx");
             }
@@ -54,6 +53,35 @@ namespace TechKnowPro
 
             Response.Redirect("Login.aspx");
         }
+
+
+        protected void mail()
+        {
+            SmtpClient sm = new SmtpClient("smtp.gmail.com", 587);
+            sm.Credentials = new System.Net.NetworkCredential(txtEm.Text, txtPass1.Text);
+            sm.DeliveryMethod = SmtpDeliveryMethod.Network;
+
+            MailMessage mailMessage = new MailMessage("TechKnowProCompa@gmail.com", txtEm.Text);
+            mailMessage.IsBodyHtml = true;
+            mailMessage.Subject = "Notification Email(Tech Pro)";
+            mailMessage.Body = txtFN.Text + " " + txtLN.Text + " your email has been verify click on the " +
+                "link to login page" + " " + String.Format("<a href='{0}/Login.aspx'>Login</a>", HttpContext.Current.Request.Url.Host);
+            sm.EnableSsl = true;
+
+            try
+            {
+                sm.Send(mailMessage);
+                lblSuccOrErr.Text = "Registration successful! An email has been sent please check your email";
+
+            }
+            catch (Exception ex)
+            {
+                lblSuccOrErr.Text = ex.ToString();
+            }
+
+        }
+
+
         public void store()
         {
             d2= (DataView)sdsUser.Select(DataSourceSelectArguments.Empty);
@@ -67,6 +95,7 @@ namespace TechKnowPro
             Session["lastN"] = txtLN.Text;
             Session["address"] = txtAddr.Text;
             Session["questionAnswer"] = txtQuestionAnswer.Text;
+            
             //null value for other because first registered user won't have that
           
         }
