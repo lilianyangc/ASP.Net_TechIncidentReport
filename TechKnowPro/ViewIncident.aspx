@@ -58,33 +58,30 @@
     <form id="form1" runat="server">
         <table class="w-100">
                 <tr>
-                    <td> <h1 class="myH1">
-            TechKnow Pro - Incident Report Management Software</h1></td>
-                    <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" style="margin-top:43px;" CausesValidation="False" />
-                    </td>
+                    <td><h1 class="myH1"> TechKnow Pro -Incident Report Management Software</h1></td>
+                    <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" style="margin-top:43px;" CausesValidation="False" /></td>
                 </tr>
             </table>
     <br />
             <hr class="myHr">
-        <h2>View Incident</h2>
-        <div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">
-                    <div class="auto-style11">Select:</div>
-                </td>
-                <td>
-                    <asp:DropDownList ID="ddlCustomers" runat="server" Height="30px" Width="201px" AppendDataBoundItems="true"
-                        DataSourceID="SqlDataSource1" 
-                        DataTextField="full_name" 
-                        AutoPostBack="True" DataValueField="customer_id" CssClass="textbox2">
-                        <asp:ListItem>SELECT CUSTOMER</asp:ListItem>
-                    </asp:DropDownList>
+            <h2><strong>View Incident</strong></h2>
+            <div class="homebg">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">
+                        <div class="auto-style11">Select:</div>
+                    </td>
+                    <td>
+                        <asp:DropDownList ID="ddlCustomers" runat="server" Height="30px" Width="201px" AppendDataBoundItems="true"
+                            DataSourceID="SqlDataSource1" 
+                            DataTextField="full_name" 
+                            AutoPostBack="True" DataValueField="customer_id" CssClass="textbox2">
+                            <asp:ListItem>SELECT CUSTOMER</asp:ListItem>
+                        </asp:DropDownList>
                     
-                </td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+            </table>
         
 
         <div class="homebg">

@@ -33,6 +33,7 @@ namespace TechKnowPro
                 txtLastN.Text = selectedCustomer.lastname;
                 txtPhone.Text = selectedCustomer.phone;
                 txtAddress.Text = selectedCustomer.address;
+                ddlQuest.SelectedIndex = Convert.ToInt32(selectedCustomer.questionId) - 1;
                 txtAnswer.Text = selectedCustomer.questionAnswer;
                 txtUser.Text = txtEmail.Text = selectedCustomer.email;
                 txtPos.Text = selectedCustomer.positionTitle;
@@ -69,6 +70,7 @@ namespace TechKnowPro
             c.phone = row["phone"].ToString();
             c.email = row["email"].ToString();
             c.positionTitle = row["position_title"].ToString();
+            c.questionId = row["question_id"].ToString();
             c.questionAnswer = row["question_answer"].ToString();
             return c;
 

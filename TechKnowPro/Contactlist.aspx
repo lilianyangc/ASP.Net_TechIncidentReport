@@ -23,6 +23,7 @@
     </style>
 </head>
 <body>
+   
     <form id="form1" runat="server">
        <table class="w-100">
                 <tr>
@@ -32,6 +33,7 @@
     <br />
         <hr class="myHr" />
         <div class="homebg">
+            <br />
             <p><strong>Contact List - Manage your contact list</strong></p>
             <table class="auto-style1">
                 <tr>
@@ -51,12 +53,11 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
-            <br />
             <table class="w-100">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" OnClick="btnRemoveContact_Click" class="btn btn-outline-dark" /> 
-                        <asp:Button ID="btnEmptyList" runat="server" Text="Empty List" OnClick="btnEmptyList_Click" class="btn btn-outline-dark" Width="155px" />
+                        <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" OnClick="btnRemoveContact_Click" class="btn btn-outline-dark" style="margin-top:-20px;"/> 
+                        <asp:Button ID="btnEmptyList" runat="server" Text="Empty List" OnClick="btnEmptyList_Click" class="btn btn-outline-dark" Width="155px" style="margin-top:-20px;" />
                         
                         </td>
                     <td>&nbsp;</td>
@@ -67,6 +68,8 @@
                     <td class="auto-style2">
                         <asp:Button ID="btnSelectAddCust" runat="server" Text="Select Additional Customers" 
                             OnClick="btnSelectAddCust_Click" class="btn btn-outline-dark" Width="300px" />
+                        <br />
+                        <br />
                         </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
@@ -96,6 +99,7 @@
 
 
         <div class="td">
+
             <hr class="myHr">
             @2019 - COMP2139 - Techknow Pro
 
