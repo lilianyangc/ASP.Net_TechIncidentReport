@@ -11,8 +11,8 @@ namespace TechKnowPro
 {
     public partial class Registration : System.Web.UI.Page
     {
-       
-        public DataView d1,d2;
+
+        public DataView d1, d2;
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
@@ -24,17 +24,24 @@ namespace TechKnowPro
 
         protected void btnRegis_Click(object sender, EventArgs e)
         {
-             d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
-            if (d1.Count==0 && cbAgree.Checked) //check if there is no duplicate values
+            d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
+            if (d1.Count == 0 && cbAgree.Checked) //check if there is no duplicate values
             {
                 sdsUser.Insert(); //insert into user value of textbox user and password
                 store(); //after user inserted the user_id and rol_ID =1 will be used to store it in user_role table
                 sdsRole.Insert(); //insert into user_role
                 //after question is available take the id to send to customer table
                 sdsCustomers.Insert(); // insert into customers table
-                mail();
+                //mail();
                 Session.Abandon();
-                Response.Redirect("~/Login.aspx");
+
+                System.Text.StringBuilder sb = new System.Text.StringBuilder();
+                sb.Append(@"<script language='javascript'>");
+                sb.Append(@"$('#exampleModal').modal('show');");
+                sb.Append(@"</script>");
+                ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
+
+                
             }
             else { lblSuccOrErr.Text = "User exists already/Agreement not checked"; }
         }
@@ -84,22 +91,25 @@ namespace TechKnowPro
 
         public void store()
         {
-            d2= (DataView)sdsUser.Select(DataSourceSelectArguments.Empty);
+            d2 = (DataView)sdsUser.Select(DataSourceSelectArguments.Empty);
             d2.RowFilter = "username = '" + txtEm.Text + "' "; //new data row added so we check username
             DataRowView rowV2 = d2[0];
 
             Session["user_id"] = (int)rowV2["user_id"];
             Session["rol_id"] = 1; //customer role
-            Session["email"] = rowV2["username"].ToString(); 
+            Session["email"] = rowV2["username"].ToString();
             Session["firstN"] = txtFN.Text;
             Session["lastN"] = txtLN.Text;
             Session["address"] = txtAddr.Text;
             Session["questionAnswer"] = txtQuestionAnswer.Text;
-            
+
             //null value for other because first registered user won't have that
-          
+
         }
 
-        
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Login.aspx");
+        }
     }
 }
