@@ -76,7 +76,7 @@ namespace TechKnowPro
 
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void btnUpdate_Click(object sender, EventArgs e)
         {
             //updates the username and password first
             sdsUser.Update();
@@ -93,7 +93,13 @@ namespace TechKnowPro
             //CustomerManager sampleMan = (CustomerManager)Session["custoList"];
             //sampleMan.update(selectedCustomer);
             //Session["custoList"] = sampleMan;
-            lblSucc.Text = "You updated your profile";
+
+            //UpdateModal Script
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(@"<script language='javascript'>");
+            sb.Append(@"$('#updateModal').modal('show');");
+            sb.Append(@"</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
 
         }
 
@@ -106,6 +112,12 @@ namespace TechKnowPro
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx");
+        }
+
+        //Modal btn
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ProfileForm.aspx");
         }
     }
 }

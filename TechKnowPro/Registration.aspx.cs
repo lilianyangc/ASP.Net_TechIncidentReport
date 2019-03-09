@@ -32,12 +32,13 @@ namespace TechKnowPro
                 sdsRole.Insert(); //insert into user_role
                 //after question is available take the id to send to customer table
                 sdsCustomers.Insert(); // insert into customers table
-                //mail();
+                mail();
                 Session.Abandon();
 
+                //Modal Script
                 System.Text.StringBuilder sb = new System.Text.StringBuilder();
                 sb.Append(@"<script language='javascript'>");
-                sb.Append(@"$('#exampleModal').modal('show');");
+                sb.Append(@"$('#registrationModal').modal('show');");
                 sb.Append(@"</script>");
                 ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
 

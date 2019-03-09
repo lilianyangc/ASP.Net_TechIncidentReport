@@ -32,9 +32,6 @@
         .auto-style7 {
             width: 151px;
         }
-        .auto-style8 {
-            height: 360px;
-        }
         .auto-style9 {
             float: left;
             width: 28%;
@@ -50,6 +47,9 @@
             margin-left: 2em;
             margin-right: 2em;
             width: 68px;
+        }
+        .auto-style12 {
+            width: 1508px;
         }
     </style>
     </head>
@@ -92,7 +92,7 @@
         </div>
         <br />
 
-        <div class="auto-style8  homebg">
+        <div class="auto-style12">
             <div style="width:15%; float:left;">
                 <p>Details</p>
                 <table class="auto-style3" style="border:solid black 1px; padding:10px; ">

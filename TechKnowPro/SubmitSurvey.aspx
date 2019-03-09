@@ -57,30 +57,10 @@
                 </table>
             </div>
         </form>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-            <br />
-
-            <br />
-            <br />
-            <br />
-
-
-
-
-
-
-
-
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
     <div class="td">
-    <hr class="myHr">
+    <hr class="myHr" />
     @2019 - COMP2139 - Techknow Pro
 
     </div>
