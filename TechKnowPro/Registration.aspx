@@ -122,7 +122,10 @@
                     <asp:Label ID="Label9" runat="server" Text="Security Answer: "></asp:Label>
                 </td>
                 <td class="auto-style2">
+
                     <asp:TextBox ID="txtQuestionAnswer" runat="server" Width="253px" MaxLength="12" class="textbox"></asp:TextBox>
+
+
                 </td>
             </tr>
             <tr>

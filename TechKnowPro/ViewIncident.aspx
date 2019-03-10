@@ -32,9 +32,6 @@
         .auto-style7 {
             width: 151px;
         }
-        .auto-style8 {
-            height: 360px;
-        }
         .auto-style9 {
             float: left;
             width: 28%;
@@ -50,6 +47,9 @@
         }
         .auto-style14 {
             width: 253px;
+        }
+        .auto-style12 {
+            width: 1508px;
         }
     </style>
     </head>
@@ -69,7 +69,12 @@
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
+
                         &nbsp;&nbsp;&nbsp; Select:</td>
+
+                        <div class="auto-style11">Select:</div>
+                    </td>
+
                     <td>
                         <asp:DropDownList ID="ddlCustomers" runat="server" Height="30px" Width="201px" AppendDataBoundItems="true"
                             DataSourceID="SqlDataSource1" 
@@ -91,8 +96,13 @@
         </div>
         <br />
 
+
         <div class="auto-style8  homebg">
             <div class="auto-style13">
+
+        <div class="auto-style12">
+            <div style="width:15%; float:left;">
+
                 <p>Details</p>
                 <table class="auto-style3" style="border:solid black 1px; padding:10px; ">
                     <tr>
