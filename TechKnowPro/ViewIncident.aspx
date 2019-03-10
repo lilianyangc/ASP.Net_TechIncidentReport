@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/ViewIncident.css" />
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -43,13 +43,13 @@
         .auto-style10 {
             width: 230px;
         }
-        .auto-style11 {
-            background-color: white;
-            color: black;
-            padding-left: 3em;
-            margin-left: 2em;
-            margin-right: 2em;
-            width: 68px;
+        .auto-style13 {
+            width: 15%;
+            float: left;
+            height: 297px;
+        }
+        .auto-style14 {
+            width: 253px;
         }
     </style>
     </head>
@@ -58,33 +58,29 @@
     <form id="form1" runat="server">
         <table class="w-100">
                 <tr>
-                    <td> <h1 class="myH1">
-            TechKnow Pro - Incident Report Management Software</h1></td>
-                    <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" style="margin-top:43px;" CausesValidation="False" />
-                    </td>
+                    <td><h1 class="myH1"> TechKnow Pro -Incident Report Management Software</h1></td>
+                    <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" style="margin-top:43px;" CausesValidation="False" /></td>
                 </tr>
             </table>
     <br />
             <hr class="myHr">
-        <h2>View Incident</h2>
-        <div>
-        <table class="auto-style1">
-            <tr>
-                <td class="auto-style2">
-                    <div class="auto-style11">Select:</div>
-                </td>
-                <td>
-                    <asp:DropDownList ID="ddlCustomers" runat="server" Height="30px" Width="201px" AppendDataBoundItems="true"
-                        DataSourceID="SqlDataSource1" 
-                        DataTextField="full_name" 
-                        AutoPostBack="True" DataValueField="customer_id" CssClass="textbox2">
-                        <asp:ListItem>SELECT CUSTOMER</asp:ListItem>
-                    </asp:DropDownList>
+            <h2><strong>View Incident</strong></h2>
+            <div class="homebg">
+            <table class="auto-style1">
+                <tr>
+                    <td class="auto-style2">
+                        &nbsp;&nbsp;&nbsp; Select:</td>
+                    <td>
+                        <asp:DropDownList ID="ddlCustomers" runat="server" Height="30px" Width="201px" AppendDataBoundItems="true"
+                            DataSourceID="SqlDataSource1" 
+                            DataTextField="full_name" 
+                            AutoPostBack="True" DataValueField="customer_id" CssClass="textbox2">
+                            <asp:ListItem>SELECT CUSTOMER</asp:ListItem>
+                        </asp:DropDownList>
                     
-                </td>
-            </tr>
-        </table>
+                    </td>
+                </tr>
+            </table>
         
 
         <div class="homebg">
@@ -96,7 +92,7 @@
         <br />
 
         <div class="auto-style8  homebg">
-            <div style="width:15%; float:left;">
+            <div class="auto-style13">
                 <p>Details</p>
                 <table class="auto-style3" style="border:solid black 1px; padding:10px; ">
                     <tr>
@@ -144,8 +140,20 @@
             </div>
         </div>
         <footer class="homebg">
-            <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" style="margin-top:-205px;" OnClick="btnHome_Click" Width="240px" />
-             <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
+            <table class="w-100">
+                <tr>
+                    <td class="auto-style14">
+            <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" OnClick="btnHome_Click" Width="240px"  />
+                    </td>
+                    <td>
+             <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" class="btn btn-outline-dark" Width="240px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style14">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
             <asp:SqlDataSource 
                 ID="SqlDataSource1" 
                 runat="server" 

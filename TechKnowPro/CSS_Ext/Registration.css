@@ -42,10 +42,9 @@
     margin-right: auto;
     width: 600px;
     /*whatever width you want*/
-    background-color: #F0A15B;
+    background-color: white;
     padding: 50px;
-    border: 1px solid black;
-    
+    border: 6px solid #F0A15B;
 }
 
 .textbox:focus {

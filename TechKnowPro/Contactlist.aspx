@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css"/>
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -55,8 +55,8 @@
             <table class="w-100">
                 <tr>
                     <td class="auto-style2">
-                        <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" OnClick="btnRemoveContact_Click" class="btn btn-outline-dark" /> 
-                        <asp:Button ID="btnEmptyList" runat="server" Text="Empty List" OnClick="btnEmptyList_Click" class="btn btn-outline-dark" Width="155px" />
+                        <asp:Button ID="btnRemoveContact" runat="server" Text="Remove Contact" OnClick="btnRemoveContact_Click" class="btn btn-outline-dark" style="margin-top:-20px" /> 
+                        <asp:Button ID="btnEmptyList" runat="server" Text="Empty List" OnClick="btnEmptyList_Click" class="btn btn-outline-dark" Width="155px"  style="margin-top:-20px"/>
                         
                         </td>
                     <td>&nbsp;</td>
@@ -67,6 +67,7 @@
                     <td class="auto-style2">
                         <asp:Button ID="btnSelectAddCust" runat="server" Text="Select Additional Customers" 
                             OnClick="btnSelectAddCust_Click" class="btn btn-outline-dark" Width="300px" />
+                        <br />
                         </td>
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
