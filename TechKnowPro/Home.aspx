@@ -5,10 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
+    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
 </head>
 
 <body>
@@ -17,7 +17,7 @@
         <table class="w-100">
             <tr>
                 <td><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
-                <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" /></td>
+                <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" /></td>
             </tr>
         </table>
         <br />

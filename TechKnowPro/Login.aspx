@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="CSS_Ext/Login.css">
     <script src="Scripts/jquery-3.0.0.min.js"></script>
@@ -33,6 +33,12 @@
                             <td class="auto-style3">Password:</td>
                             <td class="auto-style4">
                                 &nbsp;<asp:TextBox ID="txtPassword" runat="server" TextMode="Password" class="textbox"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style3"></td>
+                            <td class="auto-style4">
+                                <asp:HyperLink ID="hypPasswordReset" runat="server" NavigateUrl="~/PasswordReset1.aspx">Forgot password?</asp:HyperLink>
                             </td>
                         </tr>
                         <tr>

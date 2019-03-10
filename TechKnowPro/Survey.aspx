@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Survey.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -15,10 +15,10 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 278px;
+            width: 286px;
         }
         .auto-style3 {
-            width: 278px;
+            width: 286px;
             height: 23px;
         }
         .auto-style4 {
@@ -37,8 +37,10 @@
         <h2><strong>Surveys</strong> - Collect feedback from customers</h2>
     <br />
         <hr class="myHr">
-        <table class="auto-style1 homebg">
+        <div class="homebg">
+        <table class="auto-style1" style="padding:10px;">
             <tr>
+                <br />
                 <td class="auto-style2">Customer Id:</td>
                 <td>
                     <asp:TextBox ID="txtCustId" runat="server" enabled="false" CssClass="textbox2"></asp:TextBox>
@@ -53,9 +55,10 @@
                 <td>
                     <asp:DropDownList ID="DropDownList1" runat="server" Height="35px" Width="515px" DataSourceID="SqlDataSource1" DataTextField="quer" DataValueField="incident_number" CssClass="textbox2">
                     </asp:DropDownList>
-                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT 'Incident for Product ' + [product_name] + ', ' + [status] + ', ' + CONVERT(varchar(20),[datetime],101) + ' - ' +  [description] as quer , [incident_id], [customer_id], [method_of_contact], [incident_number], [is_answered] FROM [incidents] WHERE (([customer_id] = @customer_id) AND ([is_answered] IS NULL))">
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT 'Incident for Product ' + [product_name] + ', ' + [status] + ', ' + CONVERT(varchar(20),[datetime],101) + ' - ' +  [description] as quer , [incident_id], [customer_id], [method_of_contact], [incident_number], [is_answered] FROM [incidents] WHERE (([customer_id] = @customer_id) AND ([is_answered] IS NULL)) AND ([status] = @status )">
                         <SelectParameters>
                             <asp:SessionParameter Name="customer_id" SessionField="customerId" Type="Int32" />
+                            <asp:Parameter Name="status" Type="string" DefaultValue="CLOSED" />
                         </SelectParameters>
                     </asp:SqlDataSource>
                 </td>
@@ -64,8 +67,8 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">Please rate this incident by following categories</td>
-                <td>&nbsp;</td>
+                <td class="auto-style2">&nbsp;&nbsp; </td>
+                <td>Please rate this incident by following categories</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -101,7 +104,7 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">Probelem Resolution:</td>
+                <td class="auto-style2">Problem Resolution:</td>
                 <td>
                     <asp:RadioButtonList ID="RadioButtonList3" runat="server">
                         <asp:ListItem>Not Satisfied</asp:ListItem>
@@ -216,7 +219,11 @@
                             <asp:Parameter Name="incident_id" Type="Int32" />
                         </UpdateParameters>
                     </asp:SqlDataSource>
+            <br />
+            <br />
+            </div>
     </form>
+
       <br />
     <div class="td">
     <hr class="myHr">

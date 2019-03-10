@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/CreateIncident.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -40,19 +40,23 @@
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" CausesValidation="False" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" />
                     </td>
                 </tr>
             </table>
     <br />
            <hr class="myHr">
-        <h2>Incident Report Page</h2>         
+        <h2>Incident Report Page</h2> 
+
+        <div class ="homebg">
         <div>
+            <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
                         <table class="auto-style3">
                             <tr>
+                                
                                 <td class="auto-style8">
                                     <asp:Label ID="Label1" runat="server" Text="Select a Customer:"></asp:Label>
                                 </td>
@@ -131,6 +135,7 @@
                 <asp:ListItem>In Person</asp:ListItem>
             </asp:RadioButtonList>
             <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" PostBackUrl="~/CreateIncident.aspx"  class="btn btn-outline-dark"  />
+            <br />
           
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
@@ -161,8 +166,10 @@
                 SelectCommand="SELECT (COUNT(*)+1) as count FROM [incidents]">
             </asp:SqlDataSource>
         </div>
+        </div>
     </form>
       <br />
+
           <br />
 
           <br />

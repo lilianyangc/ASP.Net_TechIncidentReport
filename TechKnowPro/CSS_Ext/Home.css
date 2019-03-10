@@ -6,6 +6,7 @@
     padding-left: 10px;
     padding-right: 10px;
     color: #F0A15B;
+    margin: 1em;
 }
 
 .td {
@@ -30,6 +31,16 @@ background-color:black;
 .btn-outline-dark {
     margin-top: 43px;
 }
+
+.btn-outline-warning:hover {
+    background-color: #F0A15B;
+}
+.btn-outline-warning {
+    margin-top: 43px;
+    color: #F0A15B;
+    border-color: #F0A15B;
+}
+
 .btn-outline-dark:hover {
     background-color: black;
     /*color*/
@@ -85,11 +96,13 @@ background-color:black;
 
 .homebg {
     background-color: ghostwhite;
-    padding-left: 3em;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 20px;
     color: black;
-    margin-left:3em;
-    margin-right: 3em;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
