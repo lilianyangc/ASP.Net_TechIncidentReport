@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/CreateIncident.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -31,6 +31,9 @@
             height: 26px;
             width: 182px;
         }
+        .auto-style10 {
+            width: 131px;
+        }
     </style>
 </head>
 <body>    
@@ -40,14 +43,16 @@
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" CausesValidation="False" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" />
                     </td>
                 </tr>
             </table>
     <br />
-           <hr class="myHr">
-        <h2>Incident Report Page</h2>         
+           <hr class="myHr"> 
+        <h2>Incident Report Page</h2>   
+        <div class="homebg">
         <div>
+            <br />
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
@@ -130,7 +135,21 @@
                 <asp:ListItem>Email</asp:ListItem>
                 <asp:ListItem>In Person</asp:ListItem>
             </asp:RadioButtonList>
+            <table class="w-100">
+                <tr>
+                    <td class="auto-style10">
             <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" PostBackUrl="~/CreateIncident.aspx"  class="btn btn-outline-dark"  />
+          
+                    </td>
+                    <td>
+                        <asp:Button ID="btnBack" runat="server"  Text="Back" class="btn btn-outline-dark" Width="72px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style10">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+            </table>
           
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
@@ -161,6 +180,7 @@
                 SelectCommand="SELECT (COUNT(*)+1) as count FROM [incidents]">
             </asp:SqlDataSource>
         </div>
+            </div>
     </form>
       <br />
           <br />

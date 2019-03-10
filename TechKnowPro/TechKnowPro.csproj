@@ -88,12 +88,14 @@
     <Content Include="CSS_Ext\Home.css" />
     <Content Include="CSS_Ext\Login.css" />
     <Content Include="CSS_Ext\Registration.css" />
-    <Content Include="CSS_Ext\Survey.css" />
     <Content Include="CSS_Ext\ViewIncident.css" />
     <Content Include="CSS_Ext\ViewSurvey.css" />
     <Content Include="Customers.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PasswordReset1.aspx" />
+    <Content Include="PasswordReset2.aspx" />
+    <Content Include="PasswordReset3.aspx" />
     <Content Include="ProfileForm.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -178,6 +180,27 @@
     <Compile Include="Model\Incident.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Model\User.cs" />
+    <Compile Include="PasswordReset1.aspx.cs">
+      <DependentUpon>PasswordReset1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReset1.aspx.designer.cs">
+      <DependentUpon>PasswordReset1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReset2.aspx.cs">
+      <DependentUpon>PasswordReset2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReset2.aspx.designer.cs">
+      <DependentUpon>PasswordReset2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordReset3.aspx.cs">
+      <DependentUpon>PasswordReset3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PasswordReset3.aspx.designer.cs">
+      <DependentUpon>PasswordReset3.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProfileForm.aspx.cs">
       <DependentUpon>ProfileForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -243,7 +266,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\" />
     <Folder Include="Images\" />
+    <Folder Include="obj\Debug\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\index.d.ts" />

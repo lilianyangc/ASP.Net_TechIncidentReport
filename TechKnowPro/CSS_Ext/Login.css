@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: #F0A15B;
+    background-color:black;
 }
 .label {
 margin-left:20px;
@@ -42,18 +42,17 @@ margin-top:5px;
     margin-right: auto;
     width: 400px;
     /*whatever width you want*/
-    background-color: #F0A15B;
+    background-color: white;
     padding: 50px;
-    border:1px solid black;
-
-    }
+    border: 6px solid #F0A15B;
+}
 
 .textbox:focus {
     outline-color:black;
 }
 
 .textbox {
-    border:none;
+    /*border:none;*/
     margin-bottom:5px;
 }
 

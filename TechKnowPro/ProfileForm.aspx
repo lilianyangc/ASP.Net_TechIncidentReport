@@ -42,13 +42,17 @@
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" />
                     </td>
                 </tr>
             </table>
     <br />
             <hr class="myHr">
-        <table class="auto-style1 homebg">
+
+        <div class="homebg">
+
+     
+        <table class="auto-style1">
             <tr>
                 <td class="auto-style3">
                    
@@ -191,6 +195,9 @@
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="sdsCustomerInformation" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [customer_id], [user_id], CONCAT([firstname],' ',[lastname]) AS fullname, [firstname], [lastname], [address], [email], [phone], [position_title], [question_id], [question_answer] FROM [customers] ORDER BY [customer_id]">
         </asp:SqlDataSource>
+    <br />
+    <br />
+       </div>
 </body>
      <br />
     <div class="td">
