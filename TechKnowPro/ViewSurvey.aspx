@@ -73,12 +73,14 @@
         <table class="auto-style1">
             <tr>
                 <td class="auto-style2">Select Customer:&nbsp;&nbsp;&nbsp;
-                    <asp:DropDownList ID="DropDownList1" runat="server" Height="25px" Width="239px" DataSourceID="SqlDataSource1" DataTextField="quer" DataValueField="customer_id" AutoPostBack="True" CssClass="textbox2">
+                    <asp:DropDownList ID="DropDownList1"  AppendDataBoundItems="true" runat="server" Height="25px" Width="239px" DataSourceID="SqlDataSource1" DataTextField="quer" DataValueField="customer_id" AutoPostBack="True" CssClass="textbox2">
+                        <asp:ListItem Value="0">-- Select Customer --</asp:ListItem>
+                        
                     </asp:DropDownList>
                     </td>
                 <td class="auto-style10">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * , [lastname] + ', ' + [firstname] as quer FROM [customers]"></asp:SqlDataSource>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="This Field is Required " ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="This Field is Required " ForeColor="#CC0000" InitialValue="-- Select Customer --"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td class="auto-style13">Customer Id:&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox1" runat="server" enabled="false" CssClass="textbox2"></asp:TextBox>
@@ -88,16 +90,18 @@
             </tr>
             <tr>
                 <td class="auto-style2">Survey List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:DropDownList ID="DropDownList2" runat="server" Height="25px" Width="239px" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" CssClass="textbox2">
+                    <asp:DropDownList ID="DropDownList2"   AppendDataBoundItems="true" runat="server" Height="25px" Width="239px" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" CssClass="textbox2">
+                        <asp:ListItem Value="0">-- Select a Survey --</asp:ListItem>
+                        
                     </asp:DropDownList>
                     </td>
                 <td class="auto-style10">
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], 'Survey result for incident '+ CONVERT(varchar(20), [incident_number]) as quer, [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id] FROM [surveys] WHERE ([customer_id] = @customer_id)">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList1" DefaultValue="5" Name="customer_id" PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="DropDownList1" Name="customer_id" PropertyName="SelectedValue" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DropDownList2" ErrorMessage="This Field is Required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DropDownList2" ErrorMessage="This Field is Required" ForeColor="#CC0000" InitialValue="0"></asp:RequiredFieldValidator>
                 </td>
                 <td class="auto-style13">&nbsp;</td>
                 <td>&nbsp;</td>
