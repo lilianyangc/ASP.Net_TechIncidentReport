@@ -58,8 +58,8 @@
                                         <asp:Label ID="Label1" runat="server" Text="Select a customer"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="ddlSelectCustomer" runat="server" Height="30px" Width="122px" DataSourceID="SqlDataSource1" DataTextField="fullname" DataValueField="customer_id" AutoPostBack="True">
-                                           
+                                        <asp:DropDownList ID="ddlSelectCustomer" AppendDataBoundItems="true" runat="server" Height="30px" Width="182px" DataSourceID="SqlDataSource1" DataTextField="fullname" DataValueField="customer_id" AutoPostBack="True">
+                                            <asp:ListItem>Select a Customer</asp:ListItem>
                                         </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                                             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
