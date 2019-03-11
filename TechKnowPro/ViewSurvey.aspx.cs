@@ -13,14 +13,30 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            TextBox1.Text = DropDownList1.Text;
+
+
+            if (!IsPostBack)
+            {
+                DropDownList1.DataBind();
+            }
+            
+            Clear();
+
+            if (DropDownList1.SelectedIndex != 0 || DropDownList2.SelectedIndex != 0)
+            {
+                TextBox1.Text = DropDownList1.Text;
+                DropDownList2.Items.Clear();
+                DropDownList2.DataBind();
+            }
+
+           
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
             if (this.IsValid) {
                 DataView surveyView = (DataView)
-              SqlDataSource3.Select(DataSourceSelectArguments.Empty);
+               SqlDataSource3.Select(DataSourceSelectArguments.Empty);
 
                 DataRowView row = surveyView[0];
 
@@ -38,6 +54,17 @@ namespace TechKnowPro
         protected void btnLogout_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Clear()
+        {
+            TextBox1.Text = " ";
+            lblResponseTime.Text = " ";
+            lblTechEfficiency.Text = " ";
+            lblProbReso.Text = " ";
+            lblContactToDiscuss.Text = " ";
+            lblPreferredContactMethod.Text = " ";
+            txtAdditionalComments.Text = " ";
         }
     }
 }
