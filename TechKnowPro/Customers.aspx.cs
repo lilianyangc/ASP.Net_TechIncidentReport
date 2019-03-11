@@ -17,6 +17,8 @@ namespace TechKnowPro
 
                 if (!IsPostBack) ddlSelectCustomer.DataBind();
 
+            if (ddlSelectCustomer.SelectedIndex != 0)
+            {
                 selectedCustomer = this.GetSelectedCustomer();
                 hfCustId.Value = (string)selectedCustomer.customer_id;
                 lblAddress.Text = selectedCustomer.address;
@@ -24,6 +26,7 @@ namespace TechKnowPro
                 lblEmail.Text = selectedCustomer.email;
                 hfDescription.Value = selectedCustomer.description;
                 lblSuccess.Text = "";
+            }
         }
 
         private Customer GetSelectedCustomer()

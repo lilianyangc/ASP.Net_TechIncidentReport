@@ -106,7 +106,13 @@ namespace TechKnowPro
             //CustomerManager sampleMan = (CustomerManager)Session["custoList"];
             //sampleMan.update(selectedCustomer);
             //Session["custoList"] = sampleMan;
-            lblSucc.Text = "You updated your profile";
+
+            //UpdateModal Script
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(@"<script language='javascript'>");
+            sb.Append(@"$('#updateModal').modal('show');");
+            sb.Append(@"</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
 
         }
 
@@ -135,5 +141,10 @@ namespace TechKnowPro
             //store hash string to session to update database
             return result.ToString();
         }
-    }
+        
+        //Modal btn
+        protected void btnModal_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ProfileForm.aspx");
+        }
 }

@@ -40,19 +40,21 @@
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" CausesValidation="False" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" />
                     </td>
                 </tr>
             </table>
     <br />
            <hr class="myHr">
-        <h2>Incident Report Page</h2>         
+        <h2>Incident Report Page</h2> 
+        <div class ="homebg">
         <div>
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style2">
                         <table class="auto-style3">
                             <tr>
+                                
                                 <td class="auto-style8">
                                     <asp:Label ID="Label1" runat="server" Text="Select a Customer:"></asp:Label>
                                 </td>
@@ -161,8 +163,10 @@
                 SelectCommand="SELECT (COUNT(*)+1) as count FROM [incidents]">
             </asp:SqlDataSource>
         </div>
+        </div>
     </form>
       <br />
+
           <br />
 
           <br />

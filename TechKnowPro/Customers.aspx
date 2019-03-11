@@ -37,7 +37,7 @@
                     <td> 
                         <h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-                        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" />
+                        <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" />
                     </td>
                 </tr>
             </table>
@@ -58,8 +58,8 @@
                                         <asp:Label ID="Label1" runat="server" Text="Select a customer"></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:DropDownList ID="ddlSelectCustomer" runat="server" Height="30px" Width="122px" DataSourceID="SqlDataSource1" DataTextField="fullname" DataValueField="customer_id" AutoPostBack="True">
-                                           
+                                        <asp:DropDownList ID="ddlSelectCustomer" AppendDataBoundItems="true" runat="server" Height="30px" Width="182px" DataSourceID="SqlDataSource1" DataTextField="fullname" DataValueField="customer_id" AutoPostBack="True">
+                                            <asp:ListItem>Select a Customer</asp:ListItem>
                                         </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                                             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 

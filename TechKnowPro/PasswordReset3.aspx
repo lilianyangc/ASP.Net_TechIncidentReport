@@ -5,6 +5,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
     <style type="text/css">
         .auto-style1 {
             width: 100%;
@@ -15,7 +19,8 @@
     </style>
 </head>
 <body>
-    Password Reset
+    <div class="homebg">
+        <strong>Password Reset</strong>
     <form id="form1" runat="server">
         <div>
             <table class="auto-style1">
@@ -45,6 +50,7 @@
         <br />
         <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
     </form>
+</div>
 </body>
     <asp:SqlDataSource ID="sdsPassword" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" UpdateCommand="UPDATE [users] SET [password] = @password WHERE [user_id] = @user_id">                  
         <UpdateParameters>

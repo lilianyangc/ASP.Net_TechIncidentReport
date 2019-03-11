@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -31,24 +31,53 @@
         .auto-style7 {
             height: 26px;
         }
+        .auto-style8 {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <form id="form1" runat="server" defaultbutton="btnUpdate">
         <div>
         </div>
+        
+        <%--Modal--%>
+                <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        You updated your profile
+                      </div>
+                      <div class="modal-footer">
+                          <asp:Button ID="btnModal" runat="server" Text="OK" class="btn btn-primary" OnClick="btnModal_Click" CausesValidation="False"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            <%--End of Modal--%>
+
         <table class="w-100">
                 <tr>
                     <td> <h1 class="myH1">
             TechKnow Pro - Incident Report Management Software</h1></td>
                     <td>
-            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-dark" />
+            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" />
                     </td>
                 </tr>
             </table>
     <br />
             <hr class="myHr">
-        <table class="auto-style1 homebg">
+
+        <div class="homebg">
+
+     
+        <table class="auto-style1">
             <tr>
                 <td class="auto-style3">
                    
@@ -58,7 +87,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3"> <h3><strong><asp:Label ID="Label2" runat="server" Text=" My Account Profile"></asp:Label></strong></h3></td>
+                <td class="auto-style3"> <h3><strong><asp:Label ID="Label2" runat="server" Text=" My Account Profile" CssClass="auto-style8"></asp:Label></strong></h3></td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
@@ -196,6 +225,9 @@
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="sdsCustomerInformation" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [customer_id], [user_id], CONCAT([firstname],' ',[lastname]) AS fullname, [firstname], [lastname], [address], [email], [phone], [position_title], [question_id], [question_answer] FROM [customers] ORDER BY [customer_id]">
         </asp:SqlDataSource>
+    <br />
+    <br />
+       </div>
 </body>
      <br />
     <div class="td">
