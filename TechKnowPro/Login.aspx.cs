@@ -19,6 +19,7 @@ namespace TechKnowPro
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             //generate login table which includes user_id, username(email), password and role(acces level)
             loginTable = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
 
