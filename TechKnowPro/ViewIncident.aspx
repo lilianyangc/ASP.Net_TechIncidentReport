@@ -19,7 +19,8 @@
             width: 200px;
         }
         .auto-style3 {
-            width: 100%;
+            width: 103%;
+            height: 210px;
         }
         .auto-style5 {
             width: 151px;
@@ -34,8 +35,8 @@
         }
         .auto-style9 {
             float: left;
-            width: 28%;
-            height: 300px;
+            width: 70%;
+            height: 340px;
         }
         .auto-style10 {
             width: 230px;
@@ -50,6 +51,17 @@
         }
         .auto-style12 {
             width: 1508px;
+            height: 383px;
+        }
+        .auto-style13 {
+            width: 25%;
+            float: left;
+        }
+        .auto-style14 {
+            width: 445px;
+        }
+        .auto-style15 {
+            width: 1054px;
         }
     </style>
     </head>
@@ -93,8 +105,8 @@
         <br />
 
         <div class="auto-style12">
-            <div style="width:15%; float:left;">
-                <p>Details</p>
+            <div class="auto-style13">
+                <p class="auto-style14">Details</p>
                 <table class="auto-style3" style="border:solid black 1px; padding:10px; ">
                     <tr>
                         <td class="auto-style5">
@@ -136,13 +148,13 @@
             </div>
 
             <div style="margin-left:5%;" class="auto-style9">
-                <p>Description</p>
-                <asp:TextBox ID="txtDescription" runat="server" Height="251px" TextMode="MultiLine" Width="600px" CssClass="textbox2"></asp:TextBox>
+                <p class="auto-style15">Description</p>
+                <asp:TextBox ID="txtDescription" runat="server" Height="204px" TextMode="MultiLine" Width="600px" CssClass="textbox2"></asp:TextBox>
             </div>
+            <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" style="margin-right:50px;" OnClick="btnHome_Click1"/>
+             <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click"  class="btn btn-outline-dark"/>
         </div>
         <footer class="homebg">
-            <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" style="margin-top:-205px;" OnClick="btnHome_Click" Width="240px" />
-             <asp:Button ID="btnUpdate" runat="server" Text="Update" OnClick="btnUpdate_Click" />
             <asp:SqlDataSource 
                 ID="SqlDataSource1" 
                 runat="server" 
