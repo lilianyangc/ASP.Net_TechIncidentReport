@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using TechKnowPro.Model;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace TechKnowPro
 {
@@ -18,7 +20,7 @@ namespace TechKnowPro
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                ddlQuestions.DataBind();
+                 ddlQuestions.DataBind();
             }
         }
 
@@ -27,6 +29,7 @@ namespace TechKnowPro
              d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
             if (d1.Count==0 && cbAgree.Checked) //check if there is no duplicate values
             {
+                hashPassword();
                 sdsUser.Insert(); //insert into user value of textbox user and password
                 store(); //after user inserted the user_id and rol_ID =3 will be used to store it in user_role table
                 sdsRole.Insert(); //insert into user_role
@@ -38,6 +41,21 @@ namespace TechKnowPro
                 Response.Redirect("~/Login.aspx");
             }
             else { lblSuccOrErr.Text = "User exists already/Agreement not checked"; }
+        }
+
+        public void hashPassword()
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(txtPass1.Text);
+            byte[] hash = sha256.ComputeHash(bytes);
+            //convert hash to string
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                result.Append(hash[i].ToString("X2"));
+            }
+            //store hash string to session to update database
+            Session["password"] = result.ToString();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

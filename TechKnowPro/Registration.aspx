@@ -152,7 +152,7 @@
         </SelectParameters>
         <InsertParameters>
             <asp:ControlParameter Name="username" Type="String" ControlId="txtEm"/>
-            <asp:ControlParameter Name="password" Type="String" ControlId="txtPass1"/>
+            <asp:SessionParameter Name="password" SessionField="password" Type="String" />
         </InsertParameters>
                        
     </asp:SqlDataSource>
