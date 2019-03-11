@@ -28,12 +28,14 @@
                     <td class="auto-style2">Enter new password:</td>
                     <td>
                         <asp:TextBox ID="txtPassword1" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Required!" ControlToValidate="txtPassword1" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style2">Re-type password:</td>
                     <td>
                         <asp:TextBox ID="txtPassword2" runat="server" TextMode="Password"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Required!" ControlToValidate="txtPassword2" ForeColor="Red"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -52,7 +54,7 @@
 </body>
     <asp:SqlDataSource ID="sdsPassword" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" UpdateCommand="UPDATE [users] SET [password] = @password WHERE [user_id] = @user_id">                  
         <UpdateParameters>
-            <asp:ControlParameter ControlID="txtPassword1" Name="password" PropertyName="Text" Type="String" />
+            <asp:SessionParameter Name="password" SessionField="password" Type="string" />
             <asp:SessionParameter Name="user_id" SessionField="UserId" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>

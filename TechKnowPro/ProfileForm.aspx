@@ -37,7 +37,9 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" defaultbutton="btnUpdate">
+        <div>
+        </div>
         
         <%--Modal--%>
                 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -112,8 +114,7 @@
                     <asp:Label ID="Label5" runat="server" Text="*Password:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPass" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtPass" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+                    <asp:TextBox ID="txtPass" runat="server" Width="230px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -184,7 +185,7 @@
                     <asp:Button ID="btnUpdate" runat="server" Text="Update Profile" Width="128px" OnClick="btnUpdate_Click" class="btn btn-outline-dark" style="margin-top:10px;" />
                 </td>
                 <td>
-                    <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back"  class="btn btn-outline-dark" Width="128px"  style="margin-top:10px;"  />
+                    <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back"  class="btn btn-outline-dark" Width="128px"  style="margin-top:10px;" CausesValidation="False"  />
                     <asp:Label ID="lblSucc" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
@@ -203,10 +204,16 @@
                 <asp:SessionParameter Name="user_id" SessionField="UsId" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="sdsUser" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"  UpdateCommand="UPDATE [users] SET [username] = @username, [password] = @password WHERE [user_id] = @user_id">       
+        <asp:SqlDataSource ID="sdsUserPass" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"  UpdateCommand="UPDATE [users] SET [username] = @username, [password] = @password WHERE [user_id] = @user_id">       
             <UpdateParameters>
                 <asp:ControlParameter ControlID="txtUser" Name="username" PropertyName="Text" Type="String" />
-                <asp:ControlParameter ControlID="txtPass" Name="password" PropertyName="Text" Type="String" />
+                <asp:SessionParameter Name="password" SessionField="password" Type="string" />
+                <asp:SessionParameter Name="user_id" SessionField="UsId" Type="Int32" />
+            </UpdateParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="sdsUser" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"  UpdateCommand="UPDATE [users] SET [username] = @username WHERE [user_id] = @user_id">       
+            <UpdateParameters>
+                <asp:ControlParameter ControlID="txtUser" Name="username" PropertyName="Text" Type="String" />
                 <asp:SessionParameter Name="user_id" SessionField="UsId" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>

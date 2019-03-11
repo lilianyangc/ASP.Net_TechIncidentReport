@@ -6,6 +6,9 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using TechKnowPro.Model;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
+
 namespace TechKnowPro
 {
     public partial class ProfileForm : System.Web.UI.Page
@@ -78,8 +81,18 @@ namespace TechKnowPro
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
-            //updates the username and password first
-            sdsUser.Update();
+            //if password is updated
+            if(txtPass.Text != null)
+            {
+                //hash password and add to session variable
+                Session["password"] = hashPassword(txtPass.Text);
+                //updates the username and password first
+                sdsUserPass.Update();
+                Session.Remove("password");
+            } else
+            {
+                sdsUser.Update();
+            }
 
             //updates customer information
             Session["QId"] = ddlQuest.SelectedIndex + 1; //should be the number of the value selected
@@ -114,10 +127,24 @@ namespace TechKnowPro
             Response.Redirect("Home.aspx");
         }
 
+        public string hashPassword(string password)
+        {
+            SHA256 sha256 = SHA256Managed.Create();
+            byte[] bytes = Encoding.UTF8.GetBytes(password);
+            byte[] hash = sha256.ComputeHash(bytes);
+            //convert hash to string
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < hash.Length; i++)
+            {
+                result.Append(hash[i].ToString("X2"));
+            }
+            //store hash string to session to update database
+            return result.ToString();
+        }
+        
         //Modal btn
         protected void btnModal_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ProfileForm.aspx");
         }
-    }
 }
