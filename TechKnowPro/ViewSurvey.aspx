@@ -58,16 +58,12 @@
 <body>
     <form id="form1" runat="server">
         <div>
-             <h1>
-                <table class="w-100">
-                    <tr>
-                        <td> 
-                            <h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
-                        <td>
-                            <asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning"  />
-                        </td>
-                    </tr>
-                </table>
+            <table class="w-100">
+                <tr>
+                    <td><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
+                    <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" /></td>
+                </tr>
+            </table>
             <br />
             <hr class="myHr">
              </h1>
@@ -164,7 +160,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" Width="192px"  />
+                    <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" Width="192px" OnClick="btnHome_Click"  />
                 </td>
                 <td class="auto-style10">
                     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [surveys] WHERE ([survey_id] = @survey_id)">
