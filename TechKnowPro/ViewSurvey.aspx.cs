@@ -13,6 +13,7 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+            TextBox1.Text = DropDownList1.Text;
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
