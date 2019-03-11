@@ -59,7 +59,8 @@
                                     <asp:Label ID="Label1" runat="server" Text="Select a Customer:"></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:DropDownList ID="ddlCustomers" runat="server" Height="25px" Width="160px" CssClass="textbox2" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="customer_name" DataValueField="customer_id">
+                                    <asp:DropDownList ID="ddlCustomers" AppendDataBoundItems="true" runat="server" Height="25px" Width="160px" CssClass="textbox2" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="customer_name" DataValueField="customer_id">
+                                        <asp:ListItem Selected="True">SELECT CUSTOMER</asp:ListItem>
                                     </asp:DropDownList>
                                 </td>
                             </tr>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using TechKnowPro.Model;
 using System.Data.SqlClient;
 
 namespace TechKnowPro
@@ -16,8 +17,17 @@ namespace TechKnowPro
 
         private Incident selectedIncident;
 
+        private User user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            //no login info
+            if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
+            //get user information
+            user = (User)Session["user"];
+
+            if (user.role != "technician") {Response.Redirect("~/Home.aspx"); }
+
             if (!IsPostBack)
             {
                 ddlCustomers.DataBind();
@@ -120,18 +130,19 @@ namespace TechKnowPro
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-
-        }
-
-        protected void btnHome_Click(object sender, EventArgs e)
-        {
-
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
         }
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             SqlDataSource2.Update();
             ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert ('Successfully changed the status of the incident!!')", true);
+        }
+
+        protected void btnHome_Click1(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home.aspx");
         }
     }
 }

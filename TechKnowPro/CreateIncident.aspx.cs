@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using TechKnowPro.Model;
 using System.Data.SqlClient;
 
 namespace TechKnowPro
@@ -20,8 +21,17 @@ namespace TechKnowPro
 
         private int counter;
 
+        private User user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
+            //no login info
+            if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
+            //get user information
+            user = (User)Session["user"];
+
+            if (user.role != "technician") { Response.Redirect("~/Home.aspx"); }
 
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
@@ -34,11 +44,14 @@ namespace TechKnowPro
                 ddlCustomers.DataBind();
                 txtIncidentNum.Text = row["count"].ToString();
             }
-            //get and show customer on every load
-            selectedCustomer = this.GetSelectedCustomer();
-            txtDateTime.Text = DateTime.Now.ToString("MM/dd/yyyy:  hh:mm");
-            txtCustomerId.Text = selectedCustomer.customer_id;
 
+            txtDateTime.Text = DateTime.Now.ToString("MM/dd/yyyy:  hh:mm");
+
+            if (ddlCustomers.SelectedIndex > 0)
+            {
+                //get and show customer on every load
+                selectedCustomer = this.GetSelectedCustomer();
+            }
 
         }
 
@@ -82,7 +95,8 @@ namespace TechKnowPro
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
         }
     }
 }
