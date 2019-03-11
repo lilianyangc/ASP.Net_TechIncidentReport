@@ -23,11 +23,12 @@ namespace TechKnowPro
             user = (User)Session["user"];
             if (user.role != "admin") { Response.Redirect("~/Home.aspx"); }
             
-            TextBox1.Text = DropDownList1.Text;
+            
 
             if (!IsPostBack)
             {
                 DropDownList1.DataBind();
+                TextBox1.Text = DropDownList1.Text;
             }
             
             Clear();
@@ -37,6 +38,11 @@ namespace TechKnowPro
                 TextBox1.Text = DropDownList1.Text;
                 DropDownList2.Items.Clear();
                 DropDownList2.DataBind();
+            }
+
+            if (DropDownList2.Items.Count < 1)
+            {
+                btnRetrieve.Visible = false;
             }
         }
 
@@ -80,6 +86,7 @@ namespace TechKnowPro
             lblContactToDiscuss.Text = " ";
             lblPreferredContactMethod.Text = " ";
             txtAdditionalComments.Text = " ";
+            btnRetrieve.Visible = true;
         }
     }
 }
