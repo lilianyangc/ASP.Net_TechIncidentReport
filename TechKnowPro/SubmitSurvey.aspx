@@ -27,14 +27,12 @@
 <body>
     <form id="form1" runat="server">
         
-             <table class="w-100">
-                    <tr>
-                        <td class="auto-style3"> 
-                            <h1 class="myH1">TechKnow </h1>
-                            <span>Incident Report Management Software</span>
-                        </td>
-                    </tr>
-                </table>
+        <table class="w-100">
+            <tr>
+                <td><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
+                <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" /></td>
+            </tr>
+        </table>
                 <br />
                 <hr class="myHr" />
             <div class="homebg">
@@ -44,10 +42,10 @@
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style2">
-                            <asp:Button ID="btnHome" runat="server" Text="Home" Width="69px" class="btn btn-outline-dark"  />
+                            <asp:Button ID="btnHome" runat="server" Text="Home" Width="69px" class="btn btn-outline-dark" OnClick="btnHome_Click"  />
                         </td>
                         <td>
-                            <asp:Button ID="btnReturnSurvey" runat="server" Text="Return to Survey" PostBackUrl="~/Survey.aspx" class="btn btn-outline-dark" />
+                            <asp:Button ID="btnReturnSurvey" runat="server" Text="Return to Survey" PostBackUrl="~/Survey.aspx" class="btn btn-outline-dark" OnClick="btnReturnSurvey_Click" />
                         </td>
                     </tr>
                     <tr>

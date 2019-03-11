@@ -30,9 +30,10 @@
     <form id="form1" runat="server">
         
         <table class="w-100">
-                <tr>
-                    <td><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
-                </tr>
+            <tr>
+                <td><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></td>
+                <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" /></td>
+            </tr>
         </table>
         <h2><strong>Surveys</strong> - Collect feedback from customers</h2>
     <br />
