@@ -60,7 +60,7 @@
         <br />
        
             <h3>Group Members</h3>
-            1. Aldrin Jacinto - 101112293<br />
+            1. Aldrin Jacildo - 101112293<br />
             2. Francis Victa - 101159185<br />
             3. Maria Lilian Yang - 101151657<br />
             4. Sir Angel Naguit - 101152749<br />

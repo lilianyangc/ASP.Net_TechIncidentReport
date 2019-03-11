@@ -5,17 +5,24 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using TechKnowPro.Model;
 
 namespace TechKnowPro
 {
     public partial class Customers : System.Web.UI.Page
     {
         private Customer selectedCustomer;
+        User user;
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //no login info
+            if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
+            //get user information, redirect if wrong access level
+            user = (User)Session["user"];
+            if (user.role != "admin" && user.role != "technician") { Response.Redirect("~/Home.aspx"); }
 
-                if (!IsPostBack) ddlSelectCustomer.DataBind();
+            if (!IsPostBack) ddlSelectCustomer.DataBind();
 
             if (ddlSelectCustomer.SelectedIndex != 0)
             {
@@ -71,7 +78,8 @@ namespace TechKnowPro
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
         }
     }
     }

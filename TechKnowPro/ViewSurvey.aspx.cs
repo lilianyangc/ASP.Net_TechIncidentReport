@@ -5,15 +5,25 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using TechKnowPro.Model;
 
 namespace TechKnowPro
 {
     public partial class ViewSurvey : System.Web.UI.Page
     {
+        User user;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-
+            
+            //no login info
+            if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
+            //get user information, redirect if wrong access level
+            user = (User)Session["user"];
+            if (user.role != "admin") { Response.Redirect("~/Home.aspx"); }
+            
+            TextBox1.Text = DropDownList1.Text;
 
             if (!IsPostBack)
             {
@@ -28,13 +38,12 @@ namespace TechKnowPro
                 DropDownList2.Items.Clear();
                 DropDownList2.DataBind();
             }
-
-           
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
-            if (this.IsValid) {
+            if (this.IsValid)
+            {
                 DataView surveyView = (DataView)
                SqlDataSource3.Select(DataSourceSelectArguments.Empty);
 
@@ -47,13 +56,19 @@ namespace TechKnowPro
                 lblPreferredContactMethod.Text = row["preferred_contact"].ToString();
                 txtAdditionalComments.Text = row["additional_comment"].ToString();
             }
-          
+
 
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
         {
+            Session.Clear();
+            Response.Redirect("~/Login.aspx");
+        }
 
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home.aspx");
         }
 
         private void Clear()

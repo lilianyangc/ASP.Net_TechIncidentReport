@@ -82,14 +82,15 @@ namespace TechKnowPro
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             //if password is updated
-            if(txtPass.Text != null)
+            if (txtPass.Text != null)
             {
                 //hash password and add to session variable
                 Session["password"] = hashPassword(txtPass.Text);
                 //updates the username and password first
                 sdsUserPass.Update();
                 Session.Remove("password");
-            } else
+            }
+            else
             {
                 sdsUser.Update();
             }
@@ -141,10 +142,11 @@ namespace TechKnowPro
             //store hash string to session to update database
             return result.ToString();
         }
-        
+
         //Modal btn
         protected void btnModal_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/ProfileForm.aspx");
         }
+    }
 }
