@@ -16,21 +16,21 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
-            
+
             //no login info
             if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
             //get user information, redirect if wrong access level
             user = (User)Session["user"];
             if (user.role != "admin") { Response.Redirect("~/Home.aspx"); }
-            
-            
+
+
 
             if (!IsPostBack)
             {
                 DropDownList1.DataBind();
                 TextBox1.Text = DropDownList1.Text;
             }
-            
+
             Clear();
 
             if (DropDownList1.SelectedIndex != 0 || DropDownList2.SelectedIndex != 0)
@@ -40,15 +40,20 @@ namespace TechKnowPro
                 DropDownList2.DataBind();
             }
 
+
+
             if (DropDownList2.Items.Count < 1)
             {
                 btnRetrieve.Visible = false;
+                lblNoSurvey.Text = "This customer has no surveys as of today.";
             }
+
+           
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
         {
-            if (this.IsValid)
+            if (this.IsValid && DropDownList1.SelectedIndex  > 0)
             {
                 DataView surveyView = (DataView)
                SqlDataSource3.Select(DataSourceSelectArguments.Empty);
@@ -87,6 +92,7 @@ namespace TechKnowPro
             lblPreferredContactMethod.Text = " ";
             txtAdditionalComments.Text = " ";
             btnRetrieve.Visible = true;
+            lblNoSurvey.Text = "";
         }
     }
 }

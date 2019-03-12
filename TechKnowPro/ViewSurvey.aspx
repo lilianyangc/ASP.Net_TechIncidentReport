@@ -109,6 +109,7 @@
             <tr>
                 <td class="auto-style7">
                     <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieve_Click" class="btn btn-outline-dark"  />
+                    <asp:Label ID="lblNoSurvey" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style11"></td>
                 <td class="auto-style14"></td>
