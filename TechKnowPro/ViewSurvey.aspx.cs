@@ -24,31 +24,36 @@ namespace TechKnowPro
             if (user.role != "admin") { Response.Redirect("~/Home.aspx"); }
 
 
-
             if (!IsPostBack)
             {
                 DropDownList1.DataBind();
-                TextBox1.Text = DropDownList1.Text;
+                TextBox1.Text = "";
             }
+
+            TextBox1.Text = DropDownList1.SelectedValue;
 
             Clear();
 
-            if (DropDownList1.SelectedIndex != 0 || DropDownList2.SelectedIndex != 0)
+            if (DropDownList1.SelectedIndex != 0 && DropDownList2.SelectedIndex == 0)
             {
-                TextBox1.Text = DropDownList1.Text;
+                
+                //TextBox1.Text = DropDownList1.Text;
                 DropDownList2.Items.Clear();
                 DropDownList2.DataBind();
+
             }
-
-
 
             if (DropDownList2.Items.Count < 1)
             {
                 btnRetrieve.Visible = false;
                 lblNoSurvey.Text = "This customer has no surveys as of today.";
             }
+            else
+            {
+                btnRetrieve.Visible = true;
+                lblNoSurvey.Text = "";
+            }
 
-           
         }
 
         protected void btnRetrieve_Click(object sender, EventArgs e)
@@ -84,15 +89,26 @@ namespace TechKnowPro
 
         private void Clear()
         {
-            TextBox1.Text = " ";
+            //TextBox1.Text = " ";
             lblResponseTime.Text = " ";
             lblTechEfficiency.Text = " ";
             lblProbReso.Text = " ";
             lblContactToDiscuss.Text = " ";
             lblPreferredContactMethod.Text = " ";
             txtAdditionalComments.Text = " ";
-            btnRetrieve.Visible = true;
+            
             lblNoSurvey.Text = "";
+        }
+
+        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DropDownList2.DataBind();
+
+        }
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //DropDownList2.DataBind();
         }
     }
 }

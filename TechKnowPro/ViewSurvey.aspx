@@ -96,7 +96,7 @@
                     </asp:DropDownList>
                     </td>
                 <td class="auto-style10">
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], 'Survey result for incident '+ CONVERT(varchar(20), [incident_number]) as quer, [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id] FROM [surveys] WHERE ([customer_id] = @customer_id)">
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], 'Survey result for incident '+ CONVERT(varchar(20), [incident_number]) as quer, [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id] FROM [surveys] where [customer_id] = @customer_id">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="DropDownList1" Name="customer_id" PropertyName="SelectedValue" Type="Int32" />
                         </SelectParameters>
