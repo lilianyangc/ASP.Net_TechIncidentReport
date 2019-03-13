@@ -35,18 +35,19 @@ namespace TechKnowPro
 
             Clear();
 
+            ddlStatus.Visible = false;
+            btnUpdate.Visible = false;
 
             if (ddlCustomers.SelectedIndex != 0)
             {
                 selectedCustomer = GetSelectedCustomer();
                 lblCustomerId.Text = selectedCustomer.customer_id;
-                ddlStatus.Visible = false;
             }
             else
             {
                 lbIncidents.Items.Clear();
-                ddlStatus.Visible = false;
             }
+
 
         }
 
@@ -107,6 +108,7 @@ namespace TechKnowPro
                 txtDescription.Text = selectedIncident.description;
                 ddlStatus.Visible = true;
                 ddlStatus.Enabled = true;
+                btnUpdate.Visible = true;
 
                 if (hfStatus.Value == "NEW")
                 {
@@ -120,6 +122,7 @@ namespace TechKnowPro
                 {
                     ddlStatus.SelectedIndex = 2;
                     ddlStatus.Enabled = false;
+                    btnUpdate.Visible = false;
                 }
             }
             else
@@ -138,7 +141,7 @@ namespace TechKnowPro
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             SqlDataSource2.Update();
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert ('Successfully changed the status of the incident!!')", true);
+            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert ('Successfully updated the status of the incident!!')", true);
         }
 
         protected void btnHome_Click1(object sender, EventArgs e)
