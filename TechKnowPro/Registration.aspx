@@ -33,26 +33,7 @@
             </h1>
         <div class="container">
     <form id="form1" runat="server">
-            <%--Modal--%>
-                <div class="modal fade" id="registrationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        You updated your profile
-                      </div>
-                      <div class="modal-footer">
-                          <asp:Button ID="btnModal" runat="server" Text="Login" class="btn btn-primary" OnClick="btnModal_Click" CausesValidation="False"/>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            <%--End of Modal--%>
+           
             <div class="auto-style7">
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" Width="717px" ForeColor="Red" ValidationGroup="vg" />
             </div>

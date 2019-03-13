@@ -51,6 +51,7 @@ namespace TechKnowPro
             {
                 //get and show customer on every load
                 selectedCustomer = this.GetSelectedCustomer();
+                txtCustomerId.Text = selectedCustomer.customer_id;
             }
 
         }
@@ -84,10 +85,12 @@ namespace TechKnowPro
         private void Clear()
         {
             counter = Convert.ToInt32(row["count"]) + 1;
-            txtCustomerId.Text = "1";
+            ddlCustomers.Items.Clear();
+            txtCustomerId.Text = string.Empty;
             txtIncidentNum.Text = counter.ToString();
             txtDescription.Text = string.Empty;
             txtProductName.Text = string.Empty;
+            ddlCustomers.Items.Insert(0, new ListItem("SELECT CUSTOMER", "NA"));
             ddlCustomers.SelectedIndex = 0;
             ddlStatus.SelectedIndex = 0;
             rblContactMethod.SelectedIndex = -1;
