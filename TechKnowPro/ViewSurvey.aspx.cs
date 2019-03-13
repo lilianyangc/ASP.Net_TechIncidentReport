@@ -34,20 +34,14 @@ namespace TechKnowPro
             {
                 DropDownList1.DataBind();
                 TextBox1.Text = "";
+
             }
             else {
                 TextBox1.Text = DropDownList1.SelectedValue;
             }
 
-
             Clear();
-
-
-
-
-
-          
-
+            
         }
 
         private Customer GetSelectedCustomer()
