@@ -53,6 +53,10 @@ namespace TechKnowPro
                 selectedCustomer = this.GetSelectedCustomer();
                 txtCustomerId.Text = selectedCustomer.customer_id;
             }
+            else
+            {
+                txtCustomerId.Text = string.Empty;
+            }
 
         }
 
@@ -75,10 +79,14 @@ namespace TechKnowPro
         //button that inserts into the database
         protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            SqlDataSource1.InsertParameters["datetime"].DefaultValue = DateTime.Now.ToString();
-            SqlDataSource1.Insert();
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert ('Successfully created an incident!')", true);
-            Clear();
+            if(ddlCustomers.SelectedIndex != 0)
+            {
+                SqlDataSource1.InsertParameters["datetime"].DefaultValue = DateTime.Now.ToString();
+                SqlDataSource1.Insert();
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert ('Successfully created an incident!')", true);
+                Clear();
+            }
+
         }
 
         //reverts the fields to their default values
@@ -86,11 +94,11 @@ namespace TechKnowPro
         {
             counter = Convert.ToInt32(row["count"]) + 1;
             ddlCustomers.Items.Clear();
+            ddlCustomers.Items.Insert(0, new ListItem("SELECT CUSTOMER", "NA"));
             txtCustomerId.Text = string.Empty;
             txtIncidentNum.Text = counter.ToString();
             txtDescription.Text = string.Empty;
             txtProductName.Text = string.Empty;
-            ddlCustomers.Items.Insert(0, new ListItem("SELECT CUSTOMER", "NA"));
             ddlCustomers.SelectedIndex = 0;
             ddlStatus.SelectedIndex = 0;
             rblContactMethod.SelectedIndex = -1;
@@ -100,6 +108,18 @@ namespace TechKnowPro
         {
             Session.Clear();
             Response.Redirect("~/Login.aspx");
+        }
+
+        protected void CustomValidator1_ServerValidate1(object source, ServerValidateEventArgs args)
+        {
+            if (ddlCustomers.SelectedIndex == 0)
+            {
+                args.IsValid = false;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
         }
     }
 }
