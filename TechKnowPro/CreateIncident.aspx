@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/CreateIncident.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/CreateIncident.css" />
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -31,6 +31,16 @@
             height: 26px;
             width: 182px;
         }
+        .auto-style10 {
+            background-color: white;
+            padding: 3em;
+            margin: 2em;
+            color: black;
+            height: 814px;
+        }
+        .auto-style11 {
+            height: 490px;
+        }
     </style>
 </head>
 <body>    
@@ -45,9 +55,9 @@
                 </tr>
             </table>
     <br />
-           <hr class="myHr">
+           <hr class="myHr" />
         <h2>Incident Report Page</h2> 
-        <div class ="homebg">
+        <div class ="auto-style10">
         <div>
             <table class="auto-style1">
                 <tr>
@@ -56,12 +66,13 @@
                             <tr>
                                 
                                 <td class="auto-style8">
-                                    <asp:Label ID="Label1" runat="server" Text="Select a Customer:"></asp:Label>
-                                </td>
+                                    <asp:Label ID="Label1" runat="server" Text="Select a Customer:"></asp:Label>;
+                                    </td>
                                 <td>
                                     <asp:DropDownList ID="ddlCustomers" AppendDataBoundItems="true" runat="server" Height="25px" Width="160px" CssClass="textbox2" AutoPostBack="True" DataSourceID="SqlDataSource1" DataTextField="customer_name" DataValueField="customer_id">
                                         <asp:ListItem Selected="True">SELECT CUSTOMER</asp:ListItem>
                                     </asp:DropDownList>
+                                    <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="Please select a Customer!" ForeColor="Red" ControlToValidate="ddlCustomers" ValidationGroup="vg" OnServerValidate="CustomValidator1_ServerValidate1">*</asp:CustomValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -74,10 +85,11 @@
                             </tr>
                             <tr>
                                 <td class="auto-style9">
-                                    <asp:Label ID="Label7" runat="server" Text="Product Name:"></asp:Label>
-                                </td>
+                                    <asp:Label ID="Label7" runat="server" Text="Product Name:"></asp:Label>&nbsp;
+                                    </td>
                                 <td class="auto-style4">
                                     <asp:TextBox ID="txtProductName" runat="server" Width="160px" CssClass="textbox2"></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Product Name Required!" ForeColor="Red" ControlToValidate="txtProductName" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                         </table>
@@ -118,22 +130,28 @@
             </table>
         </div>
         <div>
-            <p>Description of Problem:</p>
+            <p>Description of Problem:</p> 
+            &nbsp;&nbsp;&nbsp;
+            
             <asp:TextBox ID="txtDescription" runat="server" Height="177px" TextMode="MultiLine" Width="869px" CssClass="textbox2"></asp:TextBox>
            
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescription" ErrorMessage="Description of the problem is required!!" ForeColor="Red"></asp:RequiredFieldValidator>
-            
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescription" ErrorMessage="Problem Description Required!" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
+           
         </div>
-        <div>
+        <div class="auto-style11">
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Contact Method Required!" ControlToValidate="rblContactMethod" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>&nbsp;
             <asp:Label ID="Label6" runat="server" Text="Method of Contact: "></asp:Label>
-            
             
             <asp:RadioButtonList ID="rblContactMethod" runat="server" CssClass="textbox">
                 <asp:ListItem>Phone</asp:ListItem>
                 <asp:ListItem>Email</asp:ListItem>
                 <asp:ListItem>In Person</asp:ListItem>
             </asp:RadioButtonList>
-            <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" PostBackUrl="~/CreateIncident.aspx"  class="btn btn-outline-dark"  />
+            <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" PostBackUrl="~/CreateIncident.aspx"  class="btn btn-outline-dark" ValidationGroup="vg"  />
+          
+            <br /><br />
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="Red" Height="280px" ValidationGroup="vg" />
+            <br /><br /><br />
           
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                 ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 
@@ -173,7 +191,7 @@
           <br />
 
     <div class="td">
-    <hr class="myHr">
+    <hr class="myHr" />
     @2019 - COMP2139 - Techknow Pro
 
     </div>
