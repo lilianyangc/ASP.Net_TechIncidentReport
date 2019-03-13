@@ -110,6 +110,7 @@
             <tr>
                 <td class="auto-style7">
                     <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieve_Click" class="btn btn-outline-dark" Width="239px"  />
+                    <br />
                     <asp:Label ID="lblNoSurvey" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style11"></td>

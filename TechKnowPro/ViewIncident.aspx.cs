@@ -78,6 +78,7 @@ namespace TechKnowPro
 
             //create a new customer object and load with data from row
             Incident i = new Incident();
+            
             i.description = row["description"].ToString();
             i.incident_number = row["incident_number"].ToString();
             i.status = row["status"].ToString();
