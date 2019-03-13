@@ -52,7 +52,7 @@
                 <td class="auto-style2">
                     Incidents:</td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server" AppendDataBoundItems="true" Height="35px" Width="515px" DataSourceID="SqlDataSource1" DataTextField="quer" DataValueField="incident_number" CssClass="textbox2">
+                    <asp:DropDownList ID="DropDownList1" runat="server" AppendDataBoundItems="true" Height="35px" Width="515px" DataSourceID="SqlDataSource1" DataTextField="quer" DataValueField="incident_number" CssClass="textbox2" AutoPostBack="True">
                         <asp:ListItem>Select an Incident</asp:ListItem>
                     </asp:DropDownList>
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT 'Incident for Product ' + [product_name] + ', ' + [status] + ', ' + CONVERT(varchar(20),[datetime],101) + ' - ' +  [description] as quer , [incident_id], [customer_id], [method_of_contact], [incident_number], [is_answered] FROM [incidents] WHERE (([customer_id] = @customer_id) AND ([is_answered] IS NULL)) AND ([status] = @status )">

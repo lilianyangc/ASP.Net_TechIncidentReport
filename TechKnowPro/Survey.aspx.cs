@@ -28,12 +28,34 @@ namespace TechKnowPro
             if (user.role != "customer") { Response.Redirect("~/Home.aspx"); }
 
             txtCustId.Text = Session["customerId"].ToString();
-            
+
+            if (DropDownList1.SelectedIndex == 0)
+            {
+                btnSubmit.Visible = false;
+                RadioButtonList1.Enabled = false;
+                RadioButtonList2.Enabled = false;
+                RadioButtonList3.Enabled = false;
+                RadioButtonList4.Enabled = false;
+                txtComments.Enabled = false;
+
+
+            }
+            else
+            {
+                btnSubmit.Visible = true;
+                RadioButtonList1.Enabled = true;
+                RadioButtonList2.Enabled = true;
+                RadioButtonList3.Enabled = true;
+                RadioButtonList4.Enabled = true;
+                txtComments.Enabled = true;
+            }
+
         }
       
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+           
             SqlDataSource2.InsertParameters["datetime"].DefaultValue = DateTime.Now.ToString();
             SqlDataSource2.Insert();
             SqlDataSource3.Update();

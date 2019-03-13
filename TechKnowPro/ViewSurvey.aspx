@@ -15,31 +15,33 @@
             width: 100%;
         }
         .auto-style2 {
-            width: 376px;
+            width: 250px;
         }
         .auto-style4 {
-            width: 376px;
+            width: 250px;
             height: 23px;
         }
         .auto-style6 {
             height: 23px;
+            width: 361px;
         }
         .auto-style7 {
-            width: 376px;
+            width: 250px;
             height: 30px;
         }
         .auto-style9 {
             height: 30px;
+            width: 361px;
         }
         .auto-style10 {
-            width: 307px;
+            width: 594px;
         }
         .auto-style11 {
-            width: 307px;
+            width: 594px;
             height: 30px;
         }
         .auto-style12 {
-            width: 307px;
+            width: 594px;
             height: 23px;
         }
         .auto-style13 {
@@ -52,6 +54,9 @@
         .auto-style15 {
             width: 301px;
             height: 23px;
+        }
+        .auto-style16 {
+            width: 361px;
         }
         </style>
 </head>
@@ -85,30 +90,27 @@
                 <td class="auto-style13">Customer Id:&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox1" runat="server" enabled="false" CssClass="textbox2"></asp:TextBox>
                 </td>
-                <td>
+                <td class="auto-style16">
                     &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">Survey List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:DropDownList ID="DropDownList2" AppendDataBoundItems="true" runat="server" Height="25px" Width="239px" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" CssClass="textbox2">
-                        <asp:ListItem Value="0">-- Select a Survey --</asp:ListItem>
-                        
-                    </asp:DropDownList>
-                    </td>
-                <td class="auto-style10">
-                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], 'Survey result for incident '+ CONVERT(varchar(20), [incident_number]) as quer, [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id] FROM [surveys] where [customer_id] = @customer_id">
+                    <asp:ListBox ID="lbSurvey" runat="server" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" Height="152px" Width="239px"></asp:ListBox>
+                    <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], [incident_id], [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id], 'Survey result for incident ' + CONVERT(varchar(20),[incident_number]) as quer FROM [surveys] WHERE ([customer_id] = @customer_id)">
                         <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList1" Name="customer_id" PropertyName="SelectedValue" Type="Int32" />
+                            <asp:ControlParameter ControlID="TextBox1" Name="customer_id" PropertyName="Text" Type="Int32" />
                         </SelectParameters>
                     </asp:SqlDataSource>
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DropDownList2" ErrorMessage="Please select an incident" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                </td>
+                    </td>
+                <td class="auto-style10">
+                    &nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style7">
-                    <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieve_Click" class="btn btn-outline-dark"  />
+                    <asp:Button ID="btnRetrieve" runat="server" Text="Retrieve Survey Details" OnClick="btnRetrieve_Click" class="btn btn-outline-dark" Width="239px"  />
+                    <br />
                     <asp:Label ID="lblNoSurvey" runat="server" Text=""></asp:Label>
                 </td>
                 <td class="auto-style11"></td>
@@ -124,9 +126,9 @@
             <tr>
                 <td class="auto-style4">Response Time:</td>
                 <td class="auto-style12">
-                    <asp:Label ID="lblResponseTime" runat="server"></asp:Label>
+                    <asp:Label ID="lblResponseTime" runat="server" BorderColor="Blue"></asp:Label>
                 </td>
-                <td class="auto-style15">Contact to discuss Incident:</td>
+                <td class="auto-style15">Contact to discuss Incident: </td>
                 <td class="auto-style6">
                     <asp:Label ID="lblContactToDiscuss" runat="server"></asp:Label>
                 </td>
@@ -136,8 +138,8 @@
                 <td class="auto-style10">
                     <asp:Label ID="lblTechEfficiency" runat="server"></asp:Label>
                 </td>
-                <td class="auto-style13">Preferred Contact Method:</td>
-                <td>
+                <td class="auto-style13">Contact Method:</td>
+                <td class="auto-style16">
                     <asp:Label ID="lblPreferredContactMethod" runat="server"></asp:Label>
                 </td>
             </tr>
@@ -147,35 +149,30 @@
                     <asp:Label ID="lblProbReso" runat="server"></asp:Label>
                 </td>
                 <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style10">&nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style2">Additional Comment:<asp:TextBox ID="txtAdditionalComments" runat="server" textmode="MultiLine" Style="resize:none" Height="123px" Width="572px" Enabled="false" CssClass="textbox2"></asp:TextBox>
-                </td>
+                <td class="auto-style2">Additional Comment:</td>
                 <td class="auto-style10">
-                    &nbsp;</td>
+                    <asp:TextBox ID="txtAdditionalComments" runat="server" textmode="MultiLine" Style="resize:none" Height="123px" Width="440px" Enabled="false" CssClass="textbox2"></asp:TextBox>
+                </td>
                 <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style2">
                     <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" Width="192px" OnClick="btnHome_Click"  />
                 </td>
                 <td class="auto-style10">
-                    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [surveys] WHERE ([survey_id] = @survey_id)">
-                        <SelectParameters>
-                            <asp:ControlParameter ControlID="DropDownList2" Name="survey_id" PropertyName="SelectedValue" Type="Int32" />
-                        </SelectParameters>
-                    </asp:SqlDataSource>
-                </td>
+                    &nbsp;</td>
                 <td class="auto-style13">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style16">&nbsp;</td>
             </tr>
         </table>
         </div>

@@ -121,9 +121,19 @@ namespace TechKnowPro
 
         }
 
-        protected void btnModal_Click(object sender, EventArgs e)
+        protected void LinkButton1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/Login.aspx");
+            //Modal Script
+            System.Text.StringBuilder sb = new System.Text.StringBuilder();
+            sb.Append(@"<script language='javascript'>");
+            sb.Append(@"$('#termsModal').modal('show');");
+            sb.Append(@"</script>");
+            ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
+        }
+
+        protected void btnBack_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Registration.aspx");
         }
     }
 }
