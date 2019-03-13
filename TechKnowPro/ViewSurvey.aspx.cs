@@ -39,14 +39,7 @@ namespace TechKnowPro
                 TextBox1.Text = DropDownList1.SelectedValue;
             }
 
-
             Clear();
-
-
-
-
-
-          
 
         }
 

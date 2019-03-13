@@ -34,28 +34,44 @@
             width: 361px;
         }
         .auto-style10 {
-            width: 594px;
+            width: 449px;
         }
         .auto-style11 {
-            width: 594px;
+            width: 449px;
             height: 30px;
         }
         .auto-style12 {
-            width: 594px;
+            width: 449px;
             height: 23px;
         }
         .auto-style13 {
-            width: 301px;
+            width: 288px;
         }
         .auto-style14 {
-            width: 301px;
+            width: 288px;
             height: 30px;
         }
         .auto-style15 {
-            width: 301px;
+            width: 288px;
             height: 23px;
         }
         .auto-style16 {
+            width: 361px;
+        }
+        .auto-style17 {
+            width: 250px;
+            height: 90px;
+        }
+        .auto-style18 {
+            width: 449px;
+            height: 90px;
+        }
+        .auto-style19 {
+            width: 288px;
+            height: 90px;
+        }
+        .auto-style20 {
+            height: 90px;
             width: 361px;
         }
         </style>
@@ -95,7 +111,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">Survey List:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <asp:ListBox ID="lbSurvey" runat="server" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" Height="152px" Width="239px"></asp:ListBox>
+                    <asp:ListBox ID="lbSurvey" runat="server" DataSourceID="SqlDataSource2" DataTextField="quer" DataValueField="survey_id" Height="152px" Width="245px"></asp:ListBox>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [survey_id], [incident_id], [response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id], 'Survey result for incident ' + CONVERT(varchar(20),[incident_number]) as quer FROM [surveys] WHERE ([customer_id] = @customer_id)">
                         <SelectParameters>
                             <asp:ControlParameter ControlID="TextBox1" Name="customer_id" PropertyName="Text" Type="Int32" />
@@ -118,10 +134,10 @@
                 <td class="auto-style9"></td>
             </tr>
             <tr>
-                <td class="auto-style4">Customer Rating:</td>
-                <td class="auto-style12"></td>
-                <td class="auto-style15"></td>
-                <td class="auto-style6"></td>
+                <td class="auto-style17">Customer Rating:</td>
+                <td class="auto-style18"></td>
+                <td class="auto-style19"></td>
+                <td class="auto-style20"></td>
             </tr>
             <tr>
                 <td class="auto-style4">Response Time:</td>
@@ -167,7 +183,7 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" Width="192px" OnClick="btnHome_Click"  />
+                    <asp:Button ID="btnHome" runat="server" Text="Home" class="btn btn-outline-dark" Width="239px" OnClick="btnHome_Click"  />
                 </td>
                 <td class="auto-style10">
                     &nbsp;</td>
@@ -183,5 +199,7 @@
     @2019 - COMP2139 - Techknow Pro
 
     </div>
+    <br />
+    <br />
 </body>
 </html>

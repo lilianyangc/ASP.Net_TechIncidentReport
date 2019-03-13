@@ -105,7 +105,7 @@
                     <asp:Label ID="Label4" runat="server" Text="*Username:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtUser" runat="server" Width="230px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtUser" runat="server" Width="260px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtUser" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -114,7 +114,7 @@
                     <asp:Label ID="Label5" runat="server" Text="*Password:"></asp:Label>
                 </td>
                 <td>
-                    <asp:TextBox ID="txtPass" runat="server" Width="230px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
+                    <asp:TextBox ID="txtPass" runat="server" Width="260px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -128,27 +128,27 @@
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label7" runat="server" Text="*First Name:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtFirstN" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtFirstN" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtFirstN" Display="Dynamic" ErrorMessage="First Name is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label8" runat="server" Text="*Last Name:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtLastN" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtLastN" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtLastN" Display="Dynamic" ErrorMessage="Last Name is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style4"> <asp:Label ID="Label9" runat="server" Text="Position / Title:"></asp:Label></td>
                 <td class="auto-style5">
-                    <asp:TextBox ID="txtPos" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtPos" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label10" runat="server" Text="*Secret Question"></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="ddlQuest" runat="server" Height="30px" Width="230px" DataSourceID="sdsQuestion" DataTextField="description" DataValueField="question_id" CssClass="textbox2">
+                    <asp:DropDownList ID="ddlQuest" runat="server" Height="30px" Width="260px" DataSourceID="sdsQuestion" DataTextField="description" DataValueField="question_id" CssClass="textbox2">
                     </asp:DropDownList>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="ddlQuest" Display="Dynamic" ErrorMessage="Select a value" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
@@ -156,14 +156,14 @@
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label12" runat="server" Text="*Secret Answer:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtAnswer" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtAnswer" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtAnswer" Display="Dynamic" ErrorMessage="Secret Answer is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label13" runat="server" Text="*Email:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtEmail" runat="server" Width="230px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" Width="260px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Email and Username should be the same" ControlToCompare="txtEmail" ControlToValidate="txtUser" ForeColor="Red">*</asp:CompareValidator>
                 </td>
@@ -171,13 +171,13 @@
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label14" runat="server" Text="Address:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtAddress" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtAddress" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3"> <asp:Label ID="Label15" runat="server" Text="Phone:"></asp:Label></td>
                 <td>
-                    <asp:TextBox ID="txtPhone" runat="server" Width="230px" CssClass="textbox2"></asp:TextBox>
+                    <asp:TextBox ID="txtPhone" runat="server" Width="260px" CssClass="textbox2"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -235,4 +235,6 @@
     @2019 - COMP2139 - Techknow Pro
 
     </div>
+        <br />
+    <br />
 </html>

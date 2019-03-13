@@ -1,10 +1,9 @@
 ﻿body {
-    background-color: black;
-    /*background-image: url("BG2.png");*/
+    background-color: #F0A15B;
+    background-image: url("BG2.png");
     background-size: contain;
     padding-left: 10px;
     padding-right: 10px;
-    color: #F0A15B;
 }
 
 .td {
@@ -14,7 +13,7 @@
     width: 99%;
     height: 110px; 
     padding-top: 25px;
-    background-color: black;
+    background-color: #F0A15B;
 }
 
 .myH1 {
@@ -92,11 +91,4 @@
     border: thick 5px black;
     box-shadow: inset 0 0 1px 1px black;
     margin-bottom: 5px;
-}
-
-.homebg {
-    background-color: white;
-    padding: 3em;
-    margin: 2em;
-    color: black;
 }
