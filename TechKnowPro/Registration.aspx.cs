@@ -37,16 +37,10 @@ namespace TechKnowPro
                 //after question is available take the id to send to customer table
                 sdsCustomers.Insert(); // insert into customers table
                 mail();
-                Session.Abandon();
+                //add email to session
 
-                //Modal Script
-                System.Text.StringBuilder sb = new System.Text.StringBuilder();
-                sb.Append(@"<script language='javascript'>");
-                sb.Append(@"$('#registrationModal').modal('show');");
-                sb.Append(@"</script>");
-                ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
+                Response.Redirect("~/RegistrationSuccessful.aspx");
 
-                
             }
             else { lblSuccOrErr.Text = "User exists already/Agreement not checked"; }
         }

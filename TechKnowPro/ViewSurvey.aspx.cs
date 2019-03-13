@@ -28,11 +28,23 @@ namespace TechKnowPro
             {
                 DropDownList1.DataBind();
                 TextBox1.Text = "";
+
             }
 
             TextBox1.Text = DropDownList1.SelectedValue;
 
-            Clear();
+            
+
+             if (DropDownList2.Items.Count < 1)
+            {
+                btnRetrieve.Visible = false;
+                lblNoSurvey.Text = "This customer has no surveys as of today.";
+            }
+            else
+            {
+                btnRetrieve.Visible = true;
+                lblNoSurvey.Text = "";
+            }
 
             if (DropDownList1.SelectedIndex != 0 && DropDownList2.SelectedIndex == 0)
             {
@@ -43,16 +55,6 @@ namespace TechKnowPro
 
             }
 
-            if (DropDownList2.Items.Count < 1)
-            {
-                btnRetrieve.Visible = false;
-                lblNoSurvey.Text = "This customer has no surveys as of today.";
-            }
-            else
-            {
-                btnRetrieve.Visible = true;
-                lblNoSurvey.Text = "";
-            }
 
         }
 
