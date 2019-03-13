@@ -66,7 +66,7 @@
                     <asp:Label ID="Label5" runat="server" Text="Email: "></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtEm" runat="server" Width="134px" CssClass="textbox" TextMode="Email" style="margin-left: 54" class="textbox" ></asp:TextBox>
+                    <asp:TextBox ID="txtEm" runat="server" Width="253px" CssClass="textbox" TextMode="Email" style="margin-left: 54" class="textbox" ></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtEm" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                 </td>
                     
@@ -76,7 +76,7 @@
                     <asp:Label ID="Label6" runat="server" Text="Password: "></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtPass1" runat="server" Width="132px" MaxLength="12" TextMode="Password" class="textbox"></asp:TextBox>
+                    <asp:TextBox ID="txtPass1" runat="server" Width="253px" MaxLength="12" TextMode="Password" class="textbox"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtPass1" Display="Dynamic" ErrorMessage="Password required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="User must enter the same password" ControlToCompare="txtPass1" ControlToValidate="txtPass2" ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPass1" ErrorMessage="Password length must be from 6 - 12 characters!" ForeColor="Red" ValidationExpression="^.{6,12}$" ValidationGroup="vg">*</asp:RegularExpressionValidator>
@@ -88,7 +88,7 @@
                     <asp:Label ID="Label7" runat="server" Text="Confirm Password: "></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtPass2" runat="server" Width="131px" MaxLength="12" TextMode="Password" class="textbox"></asp:TextBox>
+                    <asp:TextBox ID="txtPass2" runat="server" Width="253px" MaxLength="12" TextMode="Password" class="textbox"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtPass2" Display="Dynamic" ErrorMessage="Confirmation Password required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -97,7 +97,7 @@
                     <asp:Label ID="Label4" runat="server" Text="Security Question: "></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:DropDownList ID="ddlQuestions" runat="server" DataSourceID="sdsQuestions" DataTextField="description" DataValueField="question_id" Width="253px"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlQuestions" runat="server" DataSourceID="sdsQuestions" DataTextField="description" DataValueField="question_id" Width="253px" CssClass="textbox" Height="27px"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
@@ -105,7 +105,7 @@
                     <asp:Label ID="Label9" runat="server" Text="Security Answer: "></asp:Label>
                 </td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="txtQuestionAnswer" runat="server" Width="131px" MaxLength="12" class="textbox"></asp:TextBox>
+                    <asp:TextBox ID="txtQuestionAnswer" runat="server" Width="253px" MaxLength="12" class="textbox"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtQuestionAnswer" ErrorMessage="Please enter a security answer!" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                 </td>
             </tr>

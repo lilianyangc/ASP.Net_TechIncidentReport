@@ -37,6 +37,7 @@
                 <hr class="myHr" />
             <div class="homebg">
                 <h2><strong>Survey Complete!</strong></h2>
+                <br />
                 <p>Thank you for your feedback!</p>
                 <p>A customer service representative will contact you within 24 hours.</p>
                 <table class="auto-style1">
@@ -62,5 +63,7 @@
     @2019 - COMP2139 - Techknow Pro
 
     </div>
+        <br />
+    <br />
 </body>
 </html>

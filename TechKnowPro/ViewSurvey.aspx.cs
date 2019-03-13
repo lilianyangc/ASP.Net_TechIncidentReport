@@ -41,7 +41,7 @@ namespace TechKnowPro
             }
 
             Clear();
-            
+
         }
 
         private Customer GetSelectedCustomer()

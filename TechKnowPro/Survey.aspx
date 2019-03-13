@@ -6,7 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Survey.css">
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
@@ -38,8 +38,10 @@
         <h2><strong>Surveys</strong> - Collect feedback from customers</h2>
     <br />
         <hr class="myHr">
-        <table class="auto-style1 homebg">
+        <div class="homebg">
+        <table class="auto-style1 " style="padding: 10px">
             <tr>
+                <br />
                 <td class="auto-style2">Customer Id:</td>
                 <td>
                     <asp:TextBox ID="txtCustId" runat="server" enabled="false" CssClass="textbox2"></asp:TextBox>
@@ -162,6 +164,7 @@
                 <td>&nbsp;</td>
             </tr>
         </table>
+                </div>
                     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" DeleteCommand="DELETE FROM [surveys] WHERE [survey_id] = @survey_id" InsertCommand="INSERT INTO [surveys] ([response_time], [technician_efficiency], [problem_efficiency], [contact_to_discuss], [preferred_contact], [additional_comment], [datetime], [customer_id], [incident_number]) VALUES (@response_time, @technician_efficiency, @problem_efficiency, @contact_to_discuss, @preferred_contact, @additional_comment, @datetime, @customer_id, @incident_number)" SelectCommand="SELECT * FROM [surveys]" UpdateCommand="UPDATE [surveys] SET [incident_id] = @incident_id, [response_time] = @response_time, [technician_efficiency] = @technician_efficiency, [problem_efficiency] = @problem_efficiency, [contact_to_discuss] = @contact_to_discuss, [preferred_contact] = @preferred_contact, [additional_comment] = @additional_comment, [datetime] = @datetime WHERE [survey_id] = @survey_id">
                         <DeleteParameters>
                             <asp:Parameter Name="survey_id" Type="Int32" />
@@ -226,5 +229,7 @@
     @2019 - COMP2139 - Techknow Pro
 
     </div>
+    <br />
+    <br />
 </body>
 </html>
