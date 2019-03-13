@@ -114,7 +114,8 @@
                     &nbsp;</td>
                 <td class="auto-style2">
                    &nbsp;<asp:CheckBox ID="cbAgree" runat="server" BorderStyle="None" />&nbsp;<asp:Label ID="Label8" runat="server" Text="I agree to the"></asp:Label>&nbsp;
-                    <asp:HyperLink href="TermsServices.aspx" ID="HyperLink1" runat="server" BorderColor="#A9AEB1" >terms of service</asp:HyperLink>
+                    <%--<asp:HyperLink href="TermsServices.aspx" ID="HyperLink1" runat="server" BorderColor="#A9AEB1" >terms of service</asp:HyperLink>--%>
+                    <asp:LinkButton ID="LinkButton1" runat="server" BorderColor="#A9AEB1" OnClick="LinkButton1_Click" CausesValidation="False">terms of service</asp:LinkButton>
                 </td>
             </tr>
             <tr>
@@ -134,6 +135,35 @@
                 </td>
             </tr>
         </table>
+<%--Modal--%>
+                <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Terms & Conditions</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <div>
+                            <p style="-webkit-tap-highlight-color: transparent; letter-spacing: 0.2px; line-height: 24px; padding-top: 20px; margin: 0px 0px 10px; color: rgba(0, 0, 0, 0.87); font-family: Roboto, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                                <h1 class="auto-style1">Terms of Services</h1></p>
+                            <p style="-webkit-tap-highlight-color: transparent; letter-spacing: 0.2px; line-height: 24px; padding-top: 20px; margin: 0px 0px 10px; color: rgba(0, 0, 0, 0.87); font-family: Roboto, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                                <font style="-webkit-tap-highlight-color: transparent; vertical-align: inherit;">You must comply with the rules applicable to the Services you use.</font></p>
+                            <p style="-webkit-tap-highlight-color: transparent; letter-spacing: 0.2px; line-height: 24px; padding-top: 20px; margin: 10px 0px; color: rgba(0, 0, 0, 0.87); font-family: Roboto, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                                <font style="-webkit-tap-highlight-color: transparent; vertical-align: inherit;">Do not use our Services improperly.<span>&nbsp;</span>For example, do not attempt to interfere with or access our Services using any method other than the interface and instructions that we make available to you.<span>&nbsp;</span>You must only use our Services in compliance with applicable laws, including applicable laws and regulations regarding export control and re-exports.<span>&nbsp;</span>We may suspend or terminate the provision of our Services if you fail to comply with any applicable terms or regulations, or if we investigate a suspicion of misuse.</font></p>
+                            <p style="-webkit-tap-highlight-color: transparent; letter-spacing: 0.2px; line-height: 24px; padding-top: 20px; margin: 10px 0px; color: rgba(0, 0, 0, 0.87); font-family: Roboto, arial, sans-serif; font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial;">
+                                <font style="-webkit-tap-highlight-color: transparent; vertical-align: inherit;">The use of our Services does not give you any intellectual property rights over our Services or the content you access.<span>&nbsp;</span>You may not use any content obtained through our Services without the permission of the owner of such content, unless permitted by law.<span>&nbsp;</span>These Terms of Use do not give you the right to use any brand or logo in our Services.<span>&nbsp;</span>You may not delete, obscure or modify the legal notices displayed in or with our Services.</font></p>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                          <asp:Button ID="btnBack" runat="server" Text="Back" class="btn btn-primary" OnClick="btnBack_Click" CausesValidation="False"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+<%--End of Modal--%>
     </form>
 
      </div>
