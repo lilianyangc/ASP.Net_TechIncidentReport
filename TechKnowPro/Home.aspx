@@ -21,11 +21,9 @@
             </tr>
         </table>
         <br />
-        
-        <hr class="myHr">
-
+        <hr class="myHr" />
         <div class="homebg">
-            <h3>Welcome to the Techknow Pro Support Portal</h3>
+            <h2>Welcome to the Techknow Pro Support Portal</h2>
             <br />
         </div>
        

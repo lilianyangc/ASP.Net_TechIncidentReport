@@ -7,7 +7,6 @@
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
      <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css"/>
-
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <style type="text/css">
@@ -34,8 +33,10 @@
 
     <br />
         <hr class="myHr" />
+        <h2>Contact List - Manage your contact list</h2>
+        <br />
         <div class="homebg">
-            <p><strong>Contact List - Manage your contact list</strong></p>
+            
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style3">Contact List:</td>

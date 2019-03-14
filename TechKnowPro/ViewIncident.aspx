@@ -6,64 +6,9 @@
 <head runat="server">
     <title></title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/ViewIncident.css" />
-
+    <link rel="stylesheet" type="text/css" href="CSS_Ext/ViewIncident.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <style type="text/css">
-        .auto-style1 {
-            width: 20%;
-            height: 30px;
-        }
-        .auto-style2 {
-            width: 200px;
-        }
-        .auto-style3 {
-            width: 103%;
-            height: 210px;
-        }
-        .auto-style5 {
-            width: 151px;
-            height: 23px;
-        }
-        .auto-style6 {
-            height: 23px;
-            width: 230px;
-        }
-        .auto-style7 {
-            width: 151px;
-        }
-        .auto-style9 {
-            float: left;
-            width: 70%;
-            height: 340px;
-        }
-        .auto-style10 {
-            width: 230px;
-        }
-        .auto-style11 {
-            background-color: white;
-            color: black;
-            padding-left: 3em;
-            margin-left: 2em;
-            margin-right: 2em;
-            width: 68px;
-        }
-        .auto-style12 {
-            width: 1508px;
-            height: 383px;
-        }
-        .auto-style13 {
-            width: 25%;
-            float: left;
-        }
-        .auto-style14 {
-            width: 445px;
-        }
-        .auto-style15 {
-            width: 1054px;
-        }
-    </style>
     </head>
 <body>
     <div>
@@ -76,7 +21,7 @@
             </table>
     <br />
             <hr class="myHr">
-            <h2><strong>View Incident</strong></h2>
+            <h2>View Incident</h2>
             <div class="homebg">
             <table class="auto-style1">
                 <tr>

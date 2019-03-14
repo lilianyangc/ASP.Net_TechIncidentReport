@@ -6,8 +6,7 @@
 <head runat="server">
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
-
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <style type="text/css">
@@ -35,8 +34,8 @@
                 <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" /></td>
             </tr>
         </table>
-        <h2><strong>Surveys</strong> - Collect feedback from customers</h2>
     <br />
+        <h2>Surveys- Collect feedback from customers</h2>
         <hr class="myHr">
         <div class="homebg">
         <table class="auto-style1 " style="padding: 10px">

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateIncident.aspx.cs" Inherits="TechKnowPro.CreateIncident" %>
+﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateIncident.aspx.cs" Inherits="TechKnowPro.CreateIncident" %>
 
 <!DOCTYPE html>
 
@@ -54,7 +54,8 @@
             </table>
     <br />
            <hr class="myHr" />
-        <h2>Incident Report Page</h2> 
+        <h2>Incident Report Page</h2>
+        <br />
         <div class ="auto-style10">
         <div>
             <table class="auto-style1">

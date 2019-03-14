@@ -6,11 +6,9 @@
 <head runat="server">
     <title></title>
   <link href="Content/bootstrap.min.css" rel="stylesheet" />
-     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
-
+     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-
     <style type="text/css">
 
         .auto-style1 {

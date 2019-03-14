@@ -100,3 +100,68 @@
     color: black;
 }
 
+    .auto-style1 {
+        width: 20%;
+        height: 30px;
+    }
+
+    .auto-style2 {
+        width: 200px;
+    }
+
+    .auto-style3 {
+        width: 103%;
+        height: 210px;
+    }
+
+    .auto-style5 {
+        width: 151px;
+        height: 23px;
+    }
+
+    .auto-style6 {
+        height: 23px;
+        width: 230px;
+    }
+
+    .auto-style7 {
+        width: 151px;
+    }
+
+    .auto-style9 {
+        float: left;
+        width: 70%;
+        height: 340px;
+    }
+
+    .auto-style10 {
+        width: 230px;
+    }
+
+    .auto-style11 {
+        background-color: white;
+        color: black;
+        padding-left: 3em;
+        margin-left: 2em;
+        margin-right: 2em;
+        width: 68px;
+    }
+
+    .auto-style12 {
+        width: 1508px;
+        height: 383px;
+    }
+
+    .auto-style13 {
+        width: 25%;
+        float: left;
+    }
+
+    .auto-style14 {
+        width: 445px;
+    }
+
+    .auto-style15 {
+        width: 1054px;
+    }
+

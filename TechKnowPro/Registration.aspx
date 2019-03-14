@@ -7,20 +7,9 @@
     <title></title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
      <link rel="stylesheet" type="text/css" href="CSS_Ext/Registration.css" />
-
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <style type="text/css">
-        
-        .auto-style1 {
-            width: 248px;
-
-        }
-        .auto-style2 {
-            width: 362px;
-        }
-        
-    </style>
+    
 </head>
 <body>
 
