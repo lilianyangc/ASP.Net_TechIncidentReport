@@ -39,5 +39,10 @@ namespace TechKnowPro
                 Response.Redirect("~/PasswordReset2.aspx");
             }
         }
+
+        protected void lkbhead_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
+        }
     }
 }

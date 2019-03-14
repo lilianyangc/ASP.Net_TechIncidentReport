@@ -44,5 +44,10 @@ namespace TechKnowPro
             //store hash string to session to update database
             return result.ToString();
         }
+
+        protected void lkbhead_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Login.aspx");
+        }
     }
 }

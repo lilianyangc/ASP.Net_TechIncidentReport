@@ -72,5 +72,10 @@ namespace TechKnowPro
             Session.Clear();
             Response.Redirect("~/Login.aspx");
         }
+
+        protected void lkbhead_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home.aspx");
+        }
     }
 }

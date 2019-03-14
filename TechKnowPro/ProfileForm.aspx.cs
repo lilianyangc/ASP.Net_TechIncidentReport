@@ -148,5 +148,10 @@ namespace TechKnowPro
         {
             Response.Redirect("~/ProfileForm.aspx");
         }
+
+        protected void lkbhead_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home.aspx");
+        }
     }
 }

@@ -81,5 +81,10 @@ namespace TechKnowPro
             Session.Clear();
             Response.Redirect("~/Login.aspx");
         }
+
+        protected void lkb_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Home.aspx");
+        }
     }
     }

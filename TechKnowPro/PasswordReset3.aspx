@@ -19,6 +19,9 @@
     </style>
 </head>
 <body>
+    <div>
+        <asp:LinkButton ID="lkbhead" runat="server" Visible="True" ForeColor="#F0A15B" OnClick="lkbhead_Click" Font-Underline="False" CausesValidation="False"><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></asp:LinkButton>
+    </div>
     <div class="homebg">
         <strong>Password Reset</strong>
     <form id="form1" runat="server">

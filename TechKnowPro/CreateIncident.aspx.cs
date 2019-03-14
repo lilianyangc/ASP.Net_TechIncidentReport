@@ -121,5 +121,10 @@ namespace TechKnowPro
                 args.IsValid = true;
             }
         }
+
+        protected void lkb_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Home.aspx");
+        }
     }
 }

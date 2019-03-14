@@ -113,5 +113,10 @@ namespace TechKnowPro
 
             Session["customerId"] = row["customer_id"].ToString();
         }
+
+        protected void lkb_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Home.aspx");
+        }
     }
 }
