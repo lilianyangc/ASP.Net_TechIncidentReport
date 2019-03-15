@@ -184,13 +184,13 @@ namespace TechKnowPro {
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator1;
         
         /// <summary>
-        /// RegularExpressionValidator2 control.
+        /// cvPasswordUpSp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator2;
+        protected global::System.Web.UI.WebControls.CustomValidator cvPasswordUpSp;
         
         /// <summary>
         /// Label7 control.

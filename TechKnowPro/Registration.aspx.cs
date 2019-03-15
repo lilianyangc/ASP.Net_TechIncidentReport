@@ -27,22 +27,32 @@ namespace TechKnowPro
 
         protected void btnRegis_Click(object sender, EventArgs e)
         {
+           
+            lblSuccOrErr.Text = "";
+
             d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
-            if (d1.Count == 0 && cbAgree.Checked) //check if there is no duplicate values
+
+            if (d1.Count == 0) //check if there is no duplicate values
             {
+                if (cbAgree.Checked) //check if agreement is checked
+                { 
                 hashPassword();
                 sdsUser.Insert(); //insert into user value of textbox user and password
                 store(); //after user inserted the user_id and rol_ID =1 will be used to store it in user_role table
                 sdsRole.Insert(); //insert into user_role
-                //after question is available take the id to send to customer table
+                                    //after question is available take the id to send to customer table
                 sdsCustomers.Insert(); // insert into customers table
                 mail();
                 //add email to session
 
                 Response.Redirect("~/RegistrationSuccessful.aspx");
 
+                }
+                else { lblSuccOrErr.Text = "Agreement not checked"; }
+
             }
-            else { lblSuccOrErr.Text = "User exists already/Agreement not checked"; }
+            else { lblSuccOrErr.Text = "User exists already.<br/> Please use another email"; }
+            
         }
 
         public void hashPassword()
@@ -70,6 +80,7 @@ namespace TechKnowPro
                 txtLN.Text = "";
                 txtPass1.Text = "";
                 txtPass2.Text = "";
+
             }
 
             Response.Redirect("Login.aspx");
@@ -134,6 +145,33 @@ namespace TechKnowPro
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/Registration.aspx");
+        }
+
+        //Validates if the password entered has atleast 1 uppercase and 1 special character
+        protected void cvPasswordUpSp_ServerValidate(object source, ServerValidateEventArgs args)
+        {
+            string password = txtPass1.Text;
+
+            if (password.Any(char.IsUpper) && hasSpecialChar(password))
+            {
+                args.IsValid = true;
+            }
+            else
+            {
+                args.IsValid = false;
+            }
+        }
+
+        //Returns true if it has a special character
+        public static bool hasSpecialChar(string input)
+        {
+            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
+            foreach (var item in specialChar)
+            {
+                if (input.Contains(item)) return true;
+            }
+
+            return false;
         }
     }
 }

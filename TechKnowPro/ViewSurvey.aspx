@@ -9,9 +9,6 @@
      <link rel="stylesheet" type="text/css" href="CSS_Ext/ViewSurvey.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <style type="text/css">
-        
-        </style>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -24,7 +21,6 @@
             </table>
             <br />
             <hr class="myHr" />
-             </h1>
             <h2>View Survey</h2>
             </div>
         <div class="homebg">

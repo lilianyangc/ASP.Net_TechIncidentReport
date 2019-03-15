@@ -99,6 +99,7 @@
     <Content Include="PasswordReset3.aspx" />
     <Content Include="ProfileForm.aspx" />
     <Content Include="Registration.aspx" />
+    <Content Include="RegistrationSuccessful.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="Registration.aspx.designer.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrationSuccessful.aspx.cs">
+      <DependentUpon>RegistrationSuccessful.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegistrationSuccessful.aspx.designer.cs">
+      <DependentUpon>RegistrationSuccessful.aspx</DependentUpon>
     </Compile>
     <Compile Include="SubmitSurvey.aspx.cs">
       <DependentUpon>SubmitSurvey.aspx</DependentUpon>

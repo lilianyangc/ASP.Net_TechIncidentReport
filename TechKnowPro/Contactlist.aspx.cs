@@ -18,8 +18,6 @@ namespace TechKnowPro
         {
             if (!IsPostBack) lbContacts.DataBind();
 
-            //hfSelectedContact.Value = this.lbContacts.SelectedValue.ToString();
-
             //no login info
             if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
             //get user information, redirect if wrong access level

@@ -37,14 +37,13 @@
                     <td><asp:Button ID="btnLogout" runat="server" Text="Logout" OnClick="btnLogout_Click" class="btn btn-outline-warning" CausesValidation="False" /></td>
                 </tr>
             </table>
-    <br />
+            <br />
             <hr class="myHr" />
             <h2>Customer - Search and view your customer contact information</h2>
             <br />
             <div class="homebg">
             </div>
             <div class="homebg">
-
                 <table class="auto-style1">
                     <tr>
                         <td>
@@ -108,17 +107,14 @@
                             <br />
                             <asp:Label ID="lblSuccess" runat="server" Text=""></asp:Label>
                             <asp:HiddenField ID="hfCustId" runat="server" />
-                            <asp:HiddenField ID="hfDescription" runat="server" />
-                            
+                            <asp:HiddenField ID="hfDescription" runat="server" />                    
                         </td>
                     </tr>
                 </table>
-
             </div>
-        
         </div>
     </form>
-      <br />
+     <br />
      <br />
      <br />
      <br />
@@ -130,7 +126,6 @@
     <div class="td">
     <hr class="myHr">
     @2019 - COMP2139 - Techknow Pro
-
     </div>
         <br />
     <br />

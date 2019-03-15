@@ -11,24 +11,30 @@
     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
 </head>
 <body>
-    <div>
-        <asp:LinkButton ID="lkbhead" runat="server" Visible="True" ForeColor="#F0A15B" OnClick="lkbhead_Click" Font-Underline="False" CausesValidation="False"><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></asp:LinkButton>
-    </div><br />
-    <div class="homebg">
-        <strong>Please answer the security question below:</strong><br /><br />
+
     <form id="form1" runat="server">
         <div>
-            <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label>
+            <asp:LinkButton ID="lkbhead" runat="server" Visible="True" ForeColor="#F0A15B" OnClick="lkbhead_Click" Font-Underline="False" CausesValidation="False"><h1 class="myH1">TechKnow Pro - Incident Report Management Software</h1></asp:LinkButton>
         </div>
-        <asp:TextBox ID="txtAnswer" runat="server"></asp:TextBox>
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
-        <br /><br />
-        <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
-        <br /><br />
-        <asp:Button ID="btnBack" runat="server" Text="Back to Login" CausesValidation="False" OnClick="btnBack_Click" />
+        <br />
+        <div class="homebg">
+            <strong>Please answer the security question below:</strong><br />
+            <br />
+            <div>
+                <asp:Label ID="lblQuestion" runat="server" Text=""></asp:Label>
+            </div>
+            <asp:TextBox ID="txtAnswer" runat="server"></asp:TextBox>
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+            <br />
+            <br />
+            <asp:Label ID="lblError" runat="server" ForeColor="Red"></asp:Label>
+            <br />
+            <br />
+            <asp:Button ID="btnBack" runat="server" Text="Back to Login" CausesValidation="False" OnClick="btnBack_Click" />
+        </div>
     </form>
     <br />
-    </div>
+
 </body>
-<asp:sqldatasource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT customers.customer_id, customers.user_id, customers.email, customers.question_id, questions.description, customers.question_answer FROM customers INNER JOIN questions ON customers.question_id = questions.question_id"></asp:sqldatasource>
+<asp:sqldatasource id="SqlDataSource1" runat="server" connectionstring="<%$ ConnectionStrings:ConnectionString %>" selectcommand="SELECT customers.customer_id, customers.user_id, customers.email, customers.question_id, questions.description, customers.question_answer FROM customers INNER JOIN questions ON customers.question_id = questions.question_id"></asp:sqldatasource>
 </html>
