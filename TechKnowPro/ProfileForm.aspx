@@ -113,6 +113,11 @@
                 </td>
                 <td>
                     <asp:TextBox ID="txtPass" runat="server" Width="260px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPass" ErrorMessage="Password length must be from 6 - 12 characters!" ForeColor="Red" ValidationExpression="^.{6,12}$" ValidationGroup="vg">*</asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPass" ErrorMessage="Password must contain an uppercase letter!" ForeColor="Red" ValidationExpression="^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">*</asp:RegularExpressionValidator>
+               
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtPass" Display="Dynamic" ErrorMessage="Password is required" ForeColor="Red">*</asp:RequiredFieldValidator>
+               
                 </td>
             </tr>
             <tr>
@@ -163,7 +168,7 @@
                 <td>
                     <asp:TextBox ID="txtEmail" runat="server" Width="260px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red">*</asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Email and Username should be the same" ControlToCompare="txtEmail" ControlToValidate="txtUser" ForeColor="Red">*</asp:CompareValidator>
+                    <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Email and Username are equal" ControlToCompare="txtEmail" ControlToValidate="txtUser" ForeColor="Red">*</asp:CompareValidator>
                 </td>
             </tr>
             <tr>
