@@ -26,7 +26,7 @@
             2. Francis Victa - 101159185
             3. Maria Lilian Yang - 101151657
             4. Sir Angel Naguit - 101152749
-            5. Steven Wemin - 101091788
+            5. Orell Steven Wemin - 101091788
 
  Project tools:
  IDE: Microsoft Visual Studio Ver. 2017

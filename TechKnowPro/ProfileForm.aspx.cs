@@ -81,11 +81,21 @@ namespace TechKnowPro
 
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
+            lblSucc.Text = "";
+            //validate password
+            PasswordValidator pv = new PasswordValidator(txtPass.Text);
+            if (!pv.isValid())
+            {
+                lblSucc.Text = "Password is missing at least 1 uppercase and 1 special character";
+                return;
+            }
+
             //if password is updated
             if (txtPass.Text != null)
             {
-                //hash password and add to session variable
-                Session["password"] = hashPassword(txtPass.Text);
+                //password hashing
+                Hasher hashP = new Hasher(txtPass.Text);
+                Session["password"] = hashP.getHashedPassword();
                 //updates the username and password first
                 sdsUserPass.Update();
                 Session.Remove("password");
@@ -101,12 +111,6 @@ namespace TechKnowPro
 
             selectedCustomer = this.GetSelectedCustomer();
             selectedCustomer.questionId = (ddlQuest.SelectedIndex + 1).ToString();
-
-
-            //Session["Customer"] = selectedCustomer;
-            //CustomerManager sampleMan = (CustomerManager)Session["custoList"];
-            //sampleMan.update(selectedCustomer);
-            //Session["custoList"] = sampleMan;
 
             //UpdateModal Script
             System.Text.StringBuilder sb = new System.Text.StringBuilder();
@@ -126,27 +130,6 @@ namespace TechKnowPro
         protected void btnBack_Click(object sender, EventArgs e)
         {
             Response.Redirect("Home.aspx");
-        }
-
-        public string hashPassword(string password)
-        {
-            SHA256 sha256 = SHA256Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(password);
-            byte[] hash = sha256.ComputeHash(bytes);
-            //convert hash to string
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
-            {
-                result.Append(hash[i].ToString("X2"));
-            }
-            //store hash string to session to update database
-            return result.ToString();
-        }
-
-        //Modal btn
-        protected void btnModal_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/ProfileForm.aspx");
         }
 
         protected void lkbhead_Click(object sender, EventArgs e)

@@ -70,10 +70,6 @@
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtPass1" Display="Dynamic" ErrorMessage="Password required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="User must enter the same password" ControlToCompare="txtPass1" ControlToValidate="txtPass2" ForeColor="Red" ValidationGroup="vg">*</asp:CompareValidator>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPass1" ErrorMessage="Password length must be from 6 - 12 characters!" ForeColor="Red" ValidationExpression="^.{6,12}$" ValidationGroup="vg">*</asp:RegularExpressionValidator>
-                    <asp:CustomValidator ID="cvPasswordUpSp" runat="server" ForeColor="Red" COntrolToValidate="txtPass1" ValidationGroup="vg"
-                        ErrorMessage="Password is missing atleast 1 uppercase<br/> and 1 special character" OnServerValidate="cvPasswordUpSp_ServerValidate">*</asp:CustomValidator>
-                    <%--<asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPass1" ErrorMessage="Password must contain an uppercase letter!" ForeColor="Red" 
-                        ValidationExpression="(([a-z]{0,})([A-Z]{1,})([@$!%*#?&]{1,})([0-9]{0,})|([0-9]{0,})([@$!%*#?&]{1,})([A-Z]{1,})([a-z]{0,})).*">*</asp:RegularExpressionValidator>--%>
                 </td>
             </tr>
             <tr>

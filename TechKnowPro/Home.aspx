@@ -56,7 +56,7 @@
             2. Francis Victa - 101159185<br />
             3. Maria Lilian Yang - 101151657<br />
             4. Sir Angel Naguit - 101152749<br />
-            5. Steven Wemin - 101091788<br />     
+            5. Orell Steeven Wemin - 101091788<br />     
         </div>
         <div class="td">
                 <hr class="myHr" />

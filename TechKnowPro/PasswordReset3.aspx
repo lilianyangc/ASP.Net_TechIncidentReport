@@ -54,6 +54,7 @@
             <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword1" ControlToValidate="txtPassword2" ErrorMessage="Passwords must match!" ForeColor="Red"></asp:CompareValidator>
             <br />
             <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+            <asp:Label ID="lblErr" runat="server" ForeColor="Red"></asp:Label>
         </div>
     </form>
     <asp:SqlDataSource ID="sdsPassword" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" UpdateCommand="UPDATE [users] SET [password] = @password WHERE [user_id] = @user_id">
