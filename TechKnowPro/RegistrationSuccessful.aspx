@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="homebg">
-            <h1>Registraion Successful</h1>
+            <h1>Registration Successful</h1>
             <br />
             <p>
                 <asp:Label ID="lblMessage" runat="server" Text="Label"></asp:Label></p>

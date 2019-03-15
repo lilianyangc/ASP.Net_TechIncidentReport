@@ -44,17 +44,17 @@
                 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Registration</h5>
+                      <div class="modal-header" style="color:black;">
+                        <h5 class="modal-title" id="exampleModalLabel">Profile Page</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                      <div class="modal-body">
+                      <div class="modal-body" style="color:black;">
                         You updated your profile
                       </div>
                       <div class="modal-footer">
-                          <asp:Button ID="btnModal" runat="server" Text="OK" class="btn btn-primary" OnClick="btnModal_Click" CausesValidation="False"/>
+                          <asp:Button ID="Button1" runat="server" Text="Back" class="btn btn-primary" OnClick="btnBack_Click" CausesValidation="False"/>
                       </div>
                     </div>
                   </div>
@@ -114,7 +114,6 @@
                 <td>
                     <asp:TextBox ID="txtPass" runat="server" Width="260px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPass" ErrorMessage="Password length must be from 6 - 12 characters!" ForeColor="Red" ValidationExpression="^.{6,12}$" ValidationGroup="vg">*</asp:RegularExpressionValidator>
-                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtPass" ErrorMessage="Password must contain an uppercase letter!" ForeColor="Red" ValidationExpression="^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$">*</asp:RegularExpressionValidator>
                
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtPass" Display="Dynamic" ErrorMessage="Password is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                
@@ -122,7 +121,9 @@
             </tr>
             <tr>
                 <td class="auto-style3">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblSucc" runat="server" ForeColor="Red"></asp:Label>
+                </td>
             </tr>
             <tr>
                 <td class="auto-style3"> <h3><asp:Label ID="Label6" runat="server" Text="Contact Information"></asp:Label></h3></td>
@@ -189,7 +190,6 @@
                 </td>
                 <td>
                     <asp:Button ID="btnBack" runat="server" OnClick="btnBack_Click" Text="Back"  class="btn btn-outline-dark" Width="128px"  style="margin-top:10px;" CausesValidation="False"  />
-                    <asp:Label ID="lblSucc" runat="server" Text=""></asp:Label>
                 </td>
             </tr>
         </table>

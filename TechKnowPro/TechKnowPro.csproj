@@ -179,7 +179,9 @@
       <DependentUpon>Customers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model\CustomerManager.cs" />
+    <Compile Include="Model\Hasher.cs" />
     <Compile Include="Model\Incident.cs" />
+    <Compile Include="Model\PasswordValidator.cs" />
     <Compile Include="Model\Survey.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="PasswordReset1.aspx.cs">

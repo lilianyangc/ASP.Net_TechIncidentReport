@@ -21,53 +21,48 @@ namespace TechKnowPro
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!IsPostBack)
             {
-                 ddlQuestions.DataBind();
+                ddlQuestions.DataBind();
             }
         }
 
         protected void btnRegis_Click(object sender, EventArgs e)
         {
-           
+
             lblSuccOrErr.Text = "";
+
+            //validate password
+            PasswordValidator pv = new PasswordValidator(txtPass1.Text);
+            if (!pv.isValid())
+            {
+                lblSuccOrErr.Text = "Password is missing at least 1 uppercase<br/> and 1 special character";
+                return;
+            }
 
             d1 = (DataView)sdsUserCheck.Select(DataSourceSelectArguments.Empty);//all from user
 
             if (d1.Count == 0) //check if there is no duplicate values
             {
                 if (cbAgree.Checked) //check if agreement is checked
-                { 
-                hashPassword();
-                sdsUser.Insert(); //insert into user value of textbox user and password
-                store(); //after user inserted the user_id and rol_ID =1 will be used to store it in user_role table
-                sdsRole.Insert(); //insert into user_role
-                                    //after question is available take the id to send to customer table
-                sdsCustomers.Insert(); // insert into customers table
-                mail();
-                //add email to session
+                {
+                    //password hashing
+                    Hasher hashP = new Hasher(txtPass1.Text);
+                    Session["password"] = hashP.getHashedPassword();
+                    sdsUser.Insert(); //insert into user value of textbox user and password
+                    store(); //after user inserted the user_id and rol_ID =1 will be used to store it in user_role table
+                    sdsRole.Insert(); //insert into user_role
+                                      //after question is available take the id to send to customer table
+                    sdsCustomers.Insert(); // insert into customers table
+                    mail();
+                    //add email to session
 
-                Response.Redirect("~/RegistrationSuccessful.aspx");
+                    Response.Redirect("~/RegistrationSuccessful.aspx");
 
                 }
                 else { lblSuccOrErr.Text = "Agreement not checked"; }
 
             }
             else { lblSuccOrErr.Text = "User exists already.<br/> Please use another email"; }
-            
-        }
 
-        public void hashPassword()
-        {
-            SHA256 sha256 = SHA256Managed.Create();
-            byte[] bytes = Encoding.UTF8.GetBytes(txtPass1.Text);
-            byte[] hash = sha256.ComputeHash(bytes);
-            //convert hash to string
-            StringBuilder result = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
-            {
-                result.Append(hash[i].ToString("X2"));
-            }
-            //store hash string to session to update database
-            Session["password"] = result.ToString();
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)
@@ -146,32 +141,6 @@ namespace TechKnowPro
         {
             Response.Redirect("~/Registration.aspx");
         }
-
-        //Validates if the password entered has atleast 1 uppercase and 1 special character
-        protected void cvPasswordUpSp_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            string password = txtPass1.Text;
-
-            if (password.Any(char.IsUpper) && hasSpecialChar(password))
-            {
-                args.IsValid = true;
-            }
-            else
-            {
-                args.IsValid = false;
-            }
-        }
-
-        //Returns true if it has a special character
-        public static bool hasSpecialChar(string input)
-        {
-            string specialChar = @"\|!#$%&/()=?»«@£§€{}.-;'<>_,";
-            foreach (var item in specialChar)
-            {
-                if (input.Contains(item)) return true;
-            }
-
-            return false;
-        }
     }
+
 }
