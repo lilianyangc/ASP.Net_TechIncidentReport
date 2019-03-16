@@ -25,6 +25,7 @@
            
             <div class="auto-style7">
             <asp:ValidationSummary ID="ValidationSummary1" runat="server" Width="717px" ForeColor="Red" ValidationGroup="vg" />
+            <asp:Label ID="lblSuccOrErr" runat="server" ForeColor="#CC0000"></asp:Label>            
             </div>
         
         <table class="auto-style22 homebg">
@@ -32,11 +33,14 @@
                 <td class="auto-style1">
                     <asp:Label ID="Label2" runat="server" Text="Firstname: "></asp:Label>
                     <asp:TextBox ID="txtFN" runat="server" Width="143px" class="textbox"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="rvAlphabetOnly" ControlToValidate="txtFN" runat="server" ErrorMessage="Enter alphabets only <br /> and do not leave space after firstname" ValidationExpression="^[a-zA-Z]+(\s[a-zA-Z]+)?$" ForeColor="Red" ValidationGroup="vg">*</asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFN" Display="Dynamic" ErrorMessage="First Name is required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
+
                 </td>
                 <td>
                     <asp:Label ID="Label3" runat="server" Text="Lastname: "></asp:Label>
                     <asp:TextBox ID="txtLN" runat="server" Width="164px" class="textbox"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator2" ControlToValidate="txtLN" runat="server" ErrorMessage="Enter alphabets only <br /> and do not leave space after lastname" ValidationExpression="^[a-zA-Z]+(\s[a-zA-Z]+)?$" ForeColor="Red" ValidationGroup="vg">*</asp:RegularExpressionValidator>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtLN" Display="Dynamic" ErrorMessage="Last Name is required" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -112,8 +116,7 @@
                     &nbsp;</td>
                 <td class="auto-style2">
                     &nbsp;
-                    <asp:Label ID="lblSuccOrErr" runat="server" ForeColor="#CC0000"></asp:Label>
-                </td>
+                                    </td>
             </tr>
             <tr>
                 <td class="auto-style23">&nbsp;</td>

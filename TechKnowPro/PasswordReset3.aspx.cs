@@ -15,6 +15,9 @@ namespace TechKnowPro
         protected void Page_Load(object sender, EventArgs e)
         {
             UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
+            //redirect if accessed illegaly
+            if (Session["userId"] == null) { Response.Redirect("~/Login.aspx"); }
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

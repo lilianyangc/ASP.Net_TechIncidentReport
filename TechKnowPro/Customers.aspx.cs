@@ -68,11 +68,11 @@ namespace TechKnowPro
             if (IsValid && selectedCustomer != null)
             {
                 SqlDataSource1.Insert();
-                lblSuccess.Text = "Successfully stored to contacts";
+                lblSuccess.Text = "Successfully added to contactlist.";
             }
             else
             {
-                lblSuccess.Text = "Failed to store in contacts";
+                lblSuccess.Text = "Failed to add in contactlist.";
             }
         }
 

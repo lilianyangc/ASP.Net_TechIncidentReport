@@ -47,7 +47,6 @@ namespace TechKnowPro
         private Customer GetSelectedCustomer()
         {
 
-           
             DataView customerTable = (DataView)
                 SqlDataSource1.Select(DataSourceSelectArguments.Empty);
             customerTable.RowFilter =
@@ -64,15 +63,13 @@ namespace TechKnowPro
 
         private Survey GetSelectedSurvey()
         {
-
-            
+  
             DataView surveyTable = (DataView)
                 SqlDataSource2.Select(DataSourceSelectArguments.Empty);
             surveyTable.RowFilter =
                 "survey_id = '" + lbSurvey.SelectedValue + "'";
             DataRowView row = surveyTable[0];     
             Survey i = new Survey();
-            //i.response_time = row["response_time"].ToString();
 
             lblResponseTime.Text= row["response_time"].ToString();
             lblTechEfficiency.Text = row["technician_efficiency"].ToString();
@@ -116,16 +113,6 @@ namespace TechKnowPro
             lblNoSurvey.Text = "";
         }
 
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-          
-
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
 
         protected void lkb_Click(object sender, EventArgs e)
         {

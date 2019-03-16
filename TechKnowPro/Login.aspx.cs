@@ -3,22 +3,6 @@
  Date of Submission: March 15, 2019
  Prof.: Sergio Santilli
 
- Case Detail:
-     The TechKnowPro application is an incident management system providing functions
-    for three main types of users: customers, admins and technicians. This project is composed 
-    of 2 Phases.
-
-    Phase 1 Includes:
-    For Users: 
-    1. Administrator - Maintaining Customer Contact List for follow-up and etc and View Customer Survey Results
-    2. Technician - Maintaining Customer Contacts, Creating Incidents for Customers, Viewing Incidents
-    3. Customer - Updating their Profile, Completing Available Surveys for Incidents
-
-    Added Features:
-    -Hashed password in database storage
-    -Update button in View Incident- to be able to update an incident to "IN PROCESS" or "CLOSED"
-    -Usage of modal
-
  System coded by:
  Team: Fork-night
  Members:
