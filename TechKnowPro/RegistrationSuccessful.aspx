@@ -4,11 +4,11 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TechKnowPro</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css">
+    <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
 </head>
 <body>
     <form id="form1" runat="server">

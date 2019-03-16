@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TechKnowPro</title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
      <link rel="stylesheet" type="text/css" href="CSS_Ext/ViewSurvey.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
@@ -34,7 +34,6 @@
                     </td>
                 <td class="auto-style10">
                     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * , [lastname] + ', ' + [firstname] as quer FROM [customers]"></asp:SqlDataSource>
-                    <%--<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="This Field is Required " ForeColor="#CC0000" InitialValue="-- Select Customer --"></asp:RequiredFieldValidator>--%>
                 </td>
                 <td class="auto-style13">Customer Id:&nbsp;&nbsp;
                     <asp:TextBox ID="TextBox1" runat="server" enabled="false" CssClass="textbox2"></asp:TextBox>
@@ -128,7 +127,7 @@
     </form>
        <br />
     <div class="td">
-    <hr class="myHr">
+    <hr class="myHr" />
     @2019 - COMP2139 - Techknow Pro
 
     </div>

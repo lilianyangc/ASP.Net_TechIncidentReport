@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TechKnowPro</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="CSS_Ext/Home.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
@@ -213,6 +213,7 @@
                     </td>
                 </tr>
             </table>
+            </div>
     </form>
     <asp:SqlDataSource ID="sdsCustomer" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" UpdateCommand="UPDATE [customers] SET [firstname] = @firstname, [lastname] = @lastname, [address] = @address, [position_title] = @position_title, [email] = @email, [phone] = @phone, [question_id] = @question_id, [question_answer] = @question_answer WHERE [user_id] = @user_id">
         <UpdateParameters>
@@ -249,10 +250,9 @@
     <asp:SqlDataSource ID="sdsCustomerInformation" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [customer_id], [user_id], CONCAT([firstname],' ',[lastname]) AS fullname, [firstname], [lastname], [address], [email], [phone], [position_title], [question_id], [question_answer] FROM [customers] ORDER BY [customer_id]"></asp:SqlDataSource>
     <br />
     <br />
-    </div>
     <br />
     <div class="td">
-        <hr class="myHr">
+        <hr class="myHr" />
         @2019 - COMP2139 - Techknow Pro
     </div>
     <br />

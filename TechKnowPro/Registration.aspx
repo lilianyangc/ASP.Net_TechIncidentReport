@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>TechKnowPro</title>
      <link href="Content/bootstrap.min.css" rel="stylesheet" />
      <link rel="stylesheet" type="text/css" href="CSS_Ext/Registration.css" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
@@ -107,7 +107,6 @@
                     &nbsp;</td>
                 <td class="auto-style2">
                    &nbsp;<asp:CheckBox ID="cbAgree" runat="server" BorderStyle="None" />&nbsp;<asp:Label ID="Label8" runat="server" Text="I agree to the"></asp:Label>&nbsp;
-                    <%--<asp:HyperLink href="TermsServices.aspx" ID="HyperLink1" runat="server" BorderColor="#A9AEB1" >terms of service</asp:HyperLink>--%>
                     <asp:LinkButton ID="LinkButton1" runat="server" BorderColor="#A9AEB1" OnClick="LinkButton1_Click" CausesValidation="False">terms of service</asp:LinkButton>
                 </td>
             </tr>
