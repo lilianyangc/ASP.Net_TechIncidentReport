@@ -82,17 +82,18 @@ namespace TechKnowPro
         protected void btnUpdate_Click(object sender, EventArgs e)
         {
             lblSucc.Text = "";
-            //validate password
-            PasswordValidator pv = new PasswordValidator(txtPass.Text);
-            if (!pv.isValid())
-            {
-                lblSucc.Text = "Password is missing at least 1 uppercase and 1 special character";
-                return;
-            }
 
             //if password is updated
-            if (txtPass.Text != null)
+            if (txtPass.Text != "")
             {
+                //validate password
+                PasswordValidator pv = new PasswordValidator(txtPass.Text);
+                if (!pv.isValid())
+                {
+                    lblSucc.Text = "Password must contain at least 1 uppercase and 1 special character";
+                    return;
+                }
+
                 //password hashing
                 Hasher hashP = new Hasher(txtPass.Text);
                 Session["password"] = hashP.getHashedPassword();
