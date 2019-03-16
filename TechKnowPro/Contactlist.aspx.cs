@@ -16,6 +16,8 @@ namespace TechKnowPro
         //private int selectedContact;
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             if (!IsPostBack) lbContacts.DataBind();
 
             //no login info
@@ -30,13 +32,15 @@ namespace TechKnowPro
         {
             Server.Transfer("Customers.aspx");
         }
-
+        
+        //removes contact
         protected void btnRemoveContact_Click(object sender, EventArgs e)
         {
             SqlDataSource1.Delete();
             lbContacts.DataBind();
         }
 
+        //empties the contactlist
         protected void btnEmptyList_Click(object sender, EventArgs e)
         {
             SqlDataSource2.Delete();

@@ -55,7 +55,7 @@
                                     </td>
                                     <td>
                                         <asp:DropDownList ID="ddlSelectCustomer" AppendDataBoundItems="true" runat="server" Height="30px" Width="182px" DataSourceID="SqlDataSource1" DataTextField="fullname" DataValueField="customer_id" AutoPostBack="True">
-                                            <asp:ListItem>Select a Customer</asp:ListItem>
+                                            <asp:ListItem Selected="True">SELECT CUSTOMER</asp:ListItem>
                                         </asp:DropDownList>
                                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
                                             ConnectionString="<%$ ConnectionStrings:ConnectionString %>" 

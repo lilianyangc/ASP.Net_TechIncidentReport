@@ -137,10 +137,7 @@ namespace TechKnowPro
             ClientScript.RegisterStartupScript(this.GetType(), "JSScript", sb.ToString());
         }
 
-        protected void btnBack_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Registration.aspx");
-        }
+        
     }
 
 }

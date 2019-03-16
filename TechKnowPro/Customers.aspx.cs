@@ -22,9 +22,17 @@ namespace TechKnowPro
             user = (User)Session["user"];
             if (user.role != "admin" && user.role != "technician") { Response.Redirect("~/Home.aspx"); }
 
-            if (!IsPostBack) ddlSelectCustomer.DataBind();
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
-            if (ddlSelectCustomer.SelectedIndex != 0)
+            //binds the customers on first load
+            if (!IsPostBack)
+            {
+                ddlSelectCustomer.DataBind();
+            }
+
+            
+            //gets the selected index
+            if (ddlSelectCustomer.SelectedIndex > 0)
             {
                 selectedCustomer = this.GetSelectedCustomer();
                 hfCustId.Value = (string)selectedCustomer.customer_id;
@@ -34,6 +42,7 @@ namespace TechKnowPro
                 hfDescription.Value = selectedCustomer.description;
                 lblSuccess.Text = "";
             }
+            
         }
 
         private Customer GetSelectedCustomer()
@@ -62,18 +71,32 @@ namespace TechKnowPro
             Server.Transfer("Contactlist.aspx");
         }
 
+        //button that inserts into the database
         protected void btnAddContactList_Click(object sender, EventArgs e)
         {
 
             if (IsValid && selectedCustomer != null)
             {
                 SqlDataSource1.Insert();
+                Clear();
                 lblSuccess.Text = "Successfully added to contactlist.";
             }
             else
             {
-                lblSuccess.Text = "Failed to add in contactlist.";
+                lblSuccess.Text = "Failed to add to contactlist.";
             }
+        }
+
+        private void Clear()
+        {
+            ddlSelectCustomer.Items.Clear();
+            ddlSelectCustomer.Items.Insert(0, new ListItem("SELECT CUSTOMER", "NA"));
+            lblAddress.Text = string.Empty;
+            lblPhone.Text = string.Empty;
+            lblEmail.Text = string.Empty;
+            hfDescription.Value = string.Empty;
+            ddlSelectCustomer.SelectedIndex = 0;
+            lblSuccess.Text = "";
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)

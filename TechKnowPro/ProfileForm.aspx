@@ -57,10 +57,10 @@
                         </button>
                     </div>
                     <div class="modal-body" style="color: black;">
-                        You updated your profile
+                        You have updated your profile
                     </div>
                     <div class="modal-footer">
-                        <asp:Button ID="Button1" runat="server" Text="Back" class="btn btn-primary" OnClick="btnBack_Click" CausesValidation="False" />
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>

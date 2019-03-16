@@ -25,6 +25,7 @@ namespace TechKnowPro
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             //no login info
             if (Session["user"] == null) { Response.Redirect("~/Login.aspx"); }
@@ -32,8 +33,6 @@ namespace TechKnowPro
             user = (User)Session["user"];
 
             if (user.role != "technician") { Response.Redirect("~/Home.aspx"); }
-
-            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
             count = (DataView)SqlDataSource3.Select(DataSourceSelectArguments.Empty);
             row = count[0];

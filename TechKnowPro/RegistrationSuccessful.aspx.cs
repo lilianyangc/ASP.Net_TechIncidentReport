@@ -11,6 +11,8 @@ namespace TechKnowPro
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+
             string email = Session["email"].ToString();
             lblMessage.Text = "An email has been sent to " + email + ". Please check your email to verify and confirm.";
         }

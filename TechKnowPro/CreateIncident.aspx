@@ -140,7 +140,7 @@
                 <p>Description of Problem:</p>
                 &nbsp;&nbsp;&nbsp;    
             <asp:TextBox ID="txtDescription" runat="server" Height="177px" TextMode="MultiLine" Width="869px" CssClass="textbox2"></asp:TextBox>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescription" ErrorMessage="Problem Description Required!" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescription" ErrorMessage="Problem Description Required!" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>
             </div>
             <div class="auto-style11">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Contact Method Required!" ControlToValidate="rblContactMethod" ForeColor="Red" ValidationGroup="vg">*</asp:RequiredFieldValidator>&nbsp;
