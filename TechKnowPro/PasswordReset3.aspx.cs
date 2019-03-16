@@ -27,7 +27,7 @@ namespace TechKnowPro
             PasswordValidator pv = new PasswordValidator(txtPassword1.Text);
             if (!pv.isValid())
             {
-                lblErr.Text = "Password is missing at least 1 uppercase<br/> and 1 special character";
+                lblErr.Text = "Password must contain at least 1 uppercase and 1 special character";
                 return;
             }
 

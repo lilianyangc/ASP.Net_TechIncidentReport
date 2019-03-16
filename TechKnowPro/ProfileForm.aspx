@@ -116,14 +116,11 @@
                 </tr>
                 <tr>
                     <td class="auto-style3">
-                        <asp:Label ID="Label5" runat="server" Text="*Password:"></asp:Label>
+                        <asp:Label ID="Label5" runat="server" Text="Password:"></asp:Label>
                     </td>
                     <td>
                         <asp:TextBox ID="txtPass" runat="server" Width="260px" CssClass="textbox2" TextMode="Password"></asp:TextBox>
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPass" ErrorMessage="Password length must be from 6 - 12 characters!" ForeColor="Red" ValidationExpression="^.{6,12}$">*</asp:RegularExpressionValidator>
-
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtPass" Display="Dynamic" ErrorMessage="Password is required" ForeColor="Red">*</asp:RequiredFieldValidator>
-
                     </td>
                 </tr>
                 <tr>
@@ -188,6 +185,7 @@
                         <asp:TextBox ID="txtEmail" runat="server" Width="260px" TextMode="Email" CssClass="textbox2"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Email is required" ForeColor="Red">*</asp:RequiredFieldValidator>
                         <asp:CompareValidator ID="CompareValidator1" runat="server" ErrorMessage="Email and Username must be the same" ControlToCompare="txtEmail" ControlToValidate="txtUser" ForeColor="Red">*</asp:CompareValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ErrorMessage="Must be a valid email!" ForeColor="Red" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" ControlToValidate="txtEmail">*</asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
