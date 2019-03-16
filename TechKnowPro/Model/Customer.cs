@@ -24,21 +24,5 @@ namespace TechKnowPro
         public string questionAnswer { get; set; }
         public string description { get; set; }
 
-
-        //public Customer(int cI,int uI, string fn, string ln, string em, string add = null, string pos_ti = null ,string phon=null, int question_id = 9, string ques ="secret", Survey s=null)
-        //{
-        //    cust_id = cI;
-        //    survey = s;
-        //    user_id = uI;
-        //    quest_id = question_id;
-        //    fN = fn;
-        //    lN = ln;
-        //    address = add;
-        //    pos_title = pos_ti;
-        //    email = em;
-        //    ques_answer = ques;
-        //    phone = phon;
-        //}
-
     }
 }
