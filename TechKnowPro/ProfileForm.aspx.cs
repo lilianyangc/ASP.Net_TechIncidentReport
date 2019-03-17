@@ -62,6 +62,10 @@ namespace TechKnowPro
                 "user_id='" + user.userId + "'";
             DataRowView row = customersTable[0];
 
+            /* Note: In this form, password will not be shown since it has already been hashed in the database.
+              The user can still easily update their password by typing on the password txtbox.
+              There's no need to place the password to be able to update the other fields */
+
             //create customer object and add details to object
             Customer c = new Customer();
             c.customer_id = row["customer_id"].ToString();
